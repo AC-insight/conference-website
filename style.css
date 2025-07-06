@@ -177,3 +177,8 @@ footer .social a {
 footer .social a:hover {
     opacity: 0.7;
 }
+/* Styling for the main title link in the header */
+header h1 a {
+    color: inherit; /* 讓連結繼承父層的顏色（也就是白色） */
+    text-decoration: none; /* 移除底線 */
+}
