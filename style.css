@@ -1,3 +1,5 @@
+/* style.css */
+
 /* Variables */
 :root {
     --primary-color: #004a7c;
@@ -158,44 +160,43 @@ main {
     margin-bottom: 1rem;
 }
 
+/* ====================================================== */
+/* == THIS IS THE CORRECTED CODE FOR THE HISTORY IMAGE == */
+/* ====================================================== */
 .history-image {
     width: 70%;
-    margin: 1rem auto;
+    max-width: 100%; /* Ensures the image never overflows its container */
+    height: auto; /* Maintains the aspect ratio */
     display: block;
+    margin: 1rem auto;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 /* Publications styling */
-.publication {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    padding-bottom: 1.5rem;
+.publication-item h3 {
+    color: var(--secondary-color); /* Makes the title stand out */
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+}
+
+.publication-item .authors {
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+
+.publication-item .affiliations {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 1rem;
+    padding-left: 2rem; /* Indents the list */
+}
+
+.publication-item .correspondence {
+    font-size: 0.9rem;
     margin-bottom: 1.5rem;
 }
 
-.publication:last-child {
-    border-bottom: none;
-}
-
-.publication h3 {
-    font-size: 1.1rem;
-    margin-bottom: 0.5rem;
-    color: var(--primary-color);
-}
-
-.publication p {
-    margin-bottom: 0.5rem;
-    line-height: 1.5;
-}
-
-.publication a {
-    color: var(--secondary-color);
-    text-decoration: none;
-}
-
-.publication a:hover {
-    text-decoration: underline;
-}
 
 footer {
     background-color: var(--primary-color);
