@@ -59,22 +59,10 @@
         <section id="research" class="info-section">
             <h2>Core Research Domains</h2>
             <div class="research-grid">
-                <div class="research-card">
-                    <h3>Traditional Exercise Interventions</h3>
-                    <p>Systematically evaluating and optimizing conventional exercise programs.</p>
-                </div>
-                <div class="research-card">
-                    <h3>E-sports for Training</h3>
-                    <p>Creating revolutionary platforms at the intersection of gaming technology and gerontology.</p>
-                </div>
-                <div class="research-card">
-                    <h3>Digital Health Translation</h3>
-                    <p>Developing comprehensive ecosystems that seamlessly blend traditional exercise with modern tech.</p>
-                </div>
-                <div class="research-card">
-                    <h3>Sustainable Strategies</h3>
-                    <p>Ensuring all innovations translate into sustainable real-world programs.</p>
-                </div>
+                <div class="research-card"><h3>Traditional Exercise Interventions</h3><p>Systematically evaluating and optimizing conventional exercise programs.</p></div>
+                <div class="research-card"><h3>E-sports for Training</h3><p>Creating revolutionary platforms at the intersection of gaming technology and gerontology.</p></div>
+                <div class="research-card"><h3>Digital Health Translation</h3><p>Developing comprehensive ecosystems that seamlessly blend traditional exercise with modern tech.</p></div>
+                <div class="research-card"><h3>Sustainable Strategies</h3><p>Ensuring all innovations translate into sustainable real-world programs.</p></div>
             </div>
         </section>
 
@@ -160,13 +148,11 @@
             link.addEventListener('click', e => {
                 e.preventDefault();
                 lightboxImg.src = link.getAttribute('href');
-                // Instead of changing style directly, we add a CSS class
                 lightbox.classList.add('is-visible');
             });
         });
 
         const closeLightbox = () => {
-            // To close, we remove the CSS class
             lightbox.classList.remove('is-visible');
         };
 

@@ -1,4 +1,4 @@
-/* style.css - Final Version with All Fixes */
+/* style.css - Final Corrected Version 2.2 */
 
 /* 1. Variables & Fonts */
 :root {
@@ -32,7 +32,7 @@ header { background-color: var(--primary-color); color: var(--white); padding: 2
 header h1 a { color: inherit; text-decoration: none; }
 header .subtitle { font-size: 1.1rem; opacity: 0.9; margin-top: 0.5rem; font-style: italic; }
 
-/* Sticky Navigation */
+/* Sticky Navigation (Desktop Only) */
 nav {
     background-color: var(--white);
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
@@ -57,7 +57,15 @@ main { margin: 2rem 0; }
     background: linear-gradient(135deg, var(--primary-color) 0%, #0062a8 100%);
 }
 .hero-content { display: flex; flex-wrap: wrap; align-items: center; }
-.hero-image { flex: 1 1 40%; max-height: 400px; object-fit: cover; }
+/* ====================================================== */
+/* == 修正：電腦版英雄區塊圖片樣式 == */
+/* ====================================================== */
+.hero-image {
+    flex: 1 1 40%;
+    object-fit: contain; /* 確保圖片完整顯示，不裁切 */
+    width: 100%;
+    height: auto; /* 高度自動調整以保持比例 */
+}
 .hero-text { flex: 1 1 60%; padding: 3rem; }
 .hero-text h2, .hero-text p { color: var(--white); }
 .hero-text h2 { font-size: 2.5rem; line-height: 1.2; }
@@ -79,24 +87,18 @@ main { margin: 2rem 0; }
 }
 .info-section h2 { color: var(--primary-color); margin-bottom: 1.5rem; text-align: center; }
 
-/* Mission & Vision Section */
+/* ... (其他如 Mission, Research, Publication, Gallery 的樣式維持不變) ... */
 .mission-vision-container { display: flex; flex-wrap: wrap; gap: 2rem; }
 .mission-item { flex: 1 1 300px; }
 .mission-item h3 { color: var(--secondary-color); margin-bottom: 0.5rem; }
-
-/* Research Grid Section */
 .research-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1.5rem; }
 .research-card { background-color: #fafafa; border-left: 5px solid var(--secondary-color); padding: 1.5rem; border-radius: 8px; transition: background-color 0.3s ease; }
 .research-card:hover { background-color: #f1f1f1; }
 .research-card h3 { color: var(--primary-color); margin-bottom: 0.5rem; }
-
-/* Publication Section */
 .publication-item h3 { color: var(--secondary-color); font-size: 1.25rem; margin-bottom: 0.75rem; }
 .publication-item .authors { font-style: italic; margin-bottom: 1rem; }
 .secondary-button { background-color: var(--primary-color); color: var(--white); padding: 0.5rem 1rem; margin-top: 1rem; display: inline-block; text-decoration: none; border-radius: 5px; font-weight: bold; transition: transform .2s; }
 .secondary-button:hover { transform: translateY(-3px); }
-
-/* Photo Gallery */
 .gallery-container { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem; margin-top: 1.5rem; }
 .gallery-item { position: relative; overflow: hidden; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); height: 180px; }
 .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease; }
@@ -112,48 +114,27 @@ footer { background-color: var(--primary-color); color: var(--white); padding: 2
 /* == 響應式設計 (手機版樣式) == */
 /* ====================================================== */
 @media (max-width: 768px) {
-    /* ====================================================== */
-    /* == 新增：手機版導覽列修正 == */
-    /* ====================================================== */
+    html { scroll-padding-top: 0; } /* 手機版不需要 scroll-padding */
     nav {
-        position: static; /* On mobile, the nav is no longer sticky */
-        box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        position: static; /* 修正：手機版導覽列不再黏滯 */
     }
-    
-    /* 導覽列 */
     .nav-container { flex-direction: column; gap: 0.5rem; padding: 0.5rem 0; }
     nav a { padding: 0.5rem 1rem; border-radius: 5px; text-align: center; }
     nav a:hover { background-color: var(--bg-color); }
     nav a::after { display: none; }
-
-    /* 英雄區塊 (Hero Section) */
     .hero-content { flex-direction: column-reverse; }
     .hero-text { padding: 2rem 1.5rem; text-align: center; }
     .hero-text h2 { font-size: 1.8rem; }
-    
-    .hero-image {
-        flex-basis: auto;
-        width: 100%;
-        max-height: 250px;
-    }
-
-    /* 通用內容區塊 (Card UI) */
-    .info-section {
-        padding: 1.5rem;
-    }
-
-    /* 研究領域網格 (Research Grid) */
-    .research-grid {
-        grid-template-columns: 1fr;
-    }
+    .hero-image { flex-basis: auto; width: 100%; max-height: 250px; }
+    .info-section { padding: 1.5rem; }
+    .research-grid { grid-template-columns: 1fr; }
 }
 
 /* ====================================================== */
 /* == 修正：燈箱樣式 == */
 /* ====================================================== */
 .lightbox {
-    /* The lightbox is hidden by default */
-    display: none;
+    display: none; /* 修正：燈箱預設為隱藏 */
     position: fixed;
     z-index: 1000;
     left: 0;
@@ -162,28 +143,12 @@ footer { background-color: var(--primary-color); color: var(--white); padding: 2
     height: 100%;
     background-color: rgba(0, 0, 0, 0.85);
 }
-
-/* This class will be added by JavaScript to show the lightbox */
+/* 這個 class 將由 JavaScript 添加，用來顯示燈箱 */
 .lightbox.is-visible {
     display: flex;
     align-items: center;
     justify-content: center;
 }
-
-.lightbox-content {
-    max-width: 90%;
-    max-height: 80%;
-    object-fit: contain;
-}
-
-.close-button {
-    position: absolute;
-    top: 20px;
-    right: 35px;
-    color: #fff;
-    font-size: 40px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: color 0.3s ease;
-}
+.lightbox-content { max-width: 90%; max-height: 80%; object-fit: contain; }
+.close-button { position: absolute; top: 20px; right: 35px; color: #fff; font-size: 40px; font-weight: bold; cursor: pointer; transition: color 0.3s ease; }
 .close-button:hover { color: #bbb; }
