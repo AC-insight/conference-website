@@ -1,4 +1,4 @@
-/* style.css - Final Version with Mobile Hero Image Fix */
+/* style.css - Final Version with All Fixes */
 
 /* 1. Variables & Fonts */
 :root {
@@ -33,7 +33,13 @@ header h1 a { color: inherit; text-decoration: none; }
 header .subtitle { font-size: 1.1rem; opacity: 0.9; margin-top: 0.5rem; font-style: italic; }
 
 /* Sticky Navigation */
-nav { background-color: var(--white); box-shadow: 0 2px 4px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 10; }
+nav {
+    background-color: var(--white);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
 .nav-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; padding: 1rem 0; }
 nav a { color: var(--primary-color); text-decoration: none; font-weight: bold; position: relative; }
 nav a::after { content: ''; display: block; width: 0; height: 3px; background: var(--secondary-color); transition: width .3s; position: absolute; bottom: -5px; left: 0; }
@@ -106,6 +112,14 @@ footer { background-color: var(--primary-color); color: var(--white); padding: 2
 /* == 響應式設計 (手機版樣式) == */
 /* ====================================================== */
 @media (max-width: 768px) {
+    /* ====================================================== */
+    /* == 新增：手機版導覽列修正 == */
+    /* ====================================================== */
+    nav {
+        position: static; /* On mobile, the nav is no longer sticky */
+        box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    }
+    
     /* 導覽列 */
     .nav-container { flex-direction: column; gap: 0.5rem; padding: 0.5rem 0; }
     nav a { padding: 0.5rem 1rem; border-radius: 5px; text-align: center; }
@@ -114,16 +128,13 @@ footer { background-color: var(--primary-color); color: var(--white); padding: 2
 
     /* 英雄區塊 (Hero Section) */
     .hero-content { flex-direction: column-reverse; }
-    .hero-text { padding: 2rem 1.5rem; text-align: center; } /* 文字置中 */
+    .hero-text { padding: 2rem 1.5rem; text-align: center; }
     .hero-text h2 { font-size: 1.8rem; }
     
-    /* ====================================================== */
-    /* == 新增：手機版英雄區塊圖片修正 == */
-    /* ====================================================== */
     .hero-image {
-        flex-basis: auto; /* 重置 flex-basis */
-        width: 100%;      /* 寬度設為100% */
-        max-height: 250px; /* 給予一個合理的最大高度 */
+        flex-basis: auto;
+        width: 100%;
+        max-height: 250px;
     }
 
     /* 通用內容區塊 (Card UI) */
@@ -137,9 +148,42 @@ footer { background-color: var(--primary-color); color: var(--white); padding: 2
     }
 }
 
-/* Lightbox Styles */
-.lightbox { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.85); display: flex; align-items: center; justify-content: center; }
-.lightbox.is-visible { display: flex; }
-.lightbox-content { max-width: 90%; max-height: 80%; object-fit: contain; }
-.close-button { position: absolute; top: 20px; right: 35px; color: #fff; font-size: 40px; font-weight: bold; cursor: pointer; transition: color 0.3s ease; }
+/* ====================================================== */
+/* == 修正：燈箱樣式 == */
+/* ====================================================== */
+.lightbox {
+    /* The lightbox is hidden by default */
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+}
+
+/* This class will be added by JavaScript to show the lightbox */
+.lightbox.is-visible {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lightbox-content {
+    max-width: 90%;
+    max-height: 80%;
+    object-fit: contain;
+}
+
+.close-button {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
 .close-button:hover { color: #bbb; }
