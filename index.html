@@ -96,8 +96,7 @@
                 <a href="images/2019_fukuoka/photo1.jpg" class="gallery-link"><div class="gallery-item" data-caption="Fukuoka Moment 1"><img src="images/2019_fukuoka/photo1.jpg" alt="Fukuoka conference moment 1"></div></a>
                 <a href="images/2019_fukuoka/photo2.jpg" class="gallery-link"><div class="gallery-item" data-caption="Fukuoka Moment 2"><img src="images/2019_fukuoka/photo2.jpg" alt="Fukuoka conference moment 2"></div></a>
                 <a href="images/2019_fukuoka/photo3.jpg" class="gallery-link"><div class="gallery-item" data-caption="Fukuoka Moment 3"><img src="images/2019_fukuoka/photo3.jpg" alt="Fukuoka conference moment 3"></div></a>
-                <a href="images/2019_fukuoka/photo4.jpg" class="gallery-link"><div class="gallery-item" data-caption="Fukuoka Moment 4"><img src="images/2019_fukuoka/photo4.jpg" alt="Fukuoka conference moment 3"></div></a>
-            
+                <a href="images/2019_fukuoka/photo4.jpg" class="gallery-link"><div class="gallery-item" data-caption="Fukuoka Moment 4"><img src="images/2019_fukuoka/photo4.jpg" alt="Fukuoka conference moment 4"></div></a>
             </div>
         </section>
 
@@ -116,11 +115,10 @@
             <h2>The 3rd Conference (2025, Chongqing)</h2>
             <p>Snapshots from our gathering in Chongqing, China. Click an image to enlarge.</p>
             <div class="gallery-container">
-                <a href="images/2025_chongqing/photo1.jpg" class="gallery-link"><div class="gallery-item" data-caption="Chongqing Moment 1"><img src="images/2025_chongqing/photo1.jpeg" alt="Chongqing conference moment 1"></div></a>
-                <a href="images/2025_chongqing/photo2.jpg" class="gallery-link"><div class="gallery-item" data-caption="Chongqing Moment 2"><img src="images/2025_chongqing/photo2.jpeg" alt="Chongqing conference moment 2"></div></a>
-                <a href="images/2025_chongqing/photo1.jpg" class="gallery-link"><div class="gallery-item" data-caption="Chongqing Moment 1"><img src="images/2025_chongqing/photo3.jpeg" alt="Chongqing conference moment 3"></div></a>
-                <a href="images/2025_chongqing/photo2.jpg" class="gallery-link"><div class="gallery-item" data-caption="Chongqing Moment 2"><img src="images/2025_chongqing/photo4.jpeg" alt="Chongqing conference moment 4"></div></a>
-       
+                <a href="images/2025_chongqing/photo1.jpeg" class="gallery-link"><div class="gallery-item" data-caption="Chongqing Moment 1"><img src="images/2025_chongqing/photo1.jpeg" alt="Chongqing conference moment 1"></div></a>
+                <a href="images/2025_chongqing/photo2.jpeg" class="gallery-link"><div class="gallery-item" data-caption="Chongqing Moment 2"><img src="images/2025_chongqing/photo2.jpeg" alt="Chongqing conference moment 2"></div></a>
+                <a href="images/2025_chongqing/photo3.jpeg" class="gallery-link"><div class="gallery-item" data-caption="Chongqing Moment 3"><img src="images/2025_chongqing/photo3.jpeg" alt="Chongqing conference moment 3"></div></a>
+                <a href="images/2025_chongqing/photo4.jpeg" class="gallery-link"><div class="gallery-item" data-caption="Chongqing Moment 4"><img src="images/2025_chongqing/photo4.jpeg" alt="Chongqing conference moment 4"></div></a>
             </div>
         </section>
 
@@ -138,7 +136,6 @@
             <p>AC-INSIGHT welcomes active researchers who share our passion for transforming aging through collaborative science. Whether you're an established investigator or an emerging scientist, our consortium offers unparalleled opportunities for impactful collaboration.</p>
              <a href="mailto:[Enter Contact Email]" class="cta-button">Contact Us to Collaborate</a>
         </section>
-
     </main>
 
     <footer id="contact">
@@ -163,17 +160,20 @@
             link.addEventListener('click', e => {
                 e.preventDefault();
                 lightboxImg.src = link.getAttribute('href');
-                lightbox.style.display = 'flex';
+                // Instead of changing style directly, we add a CSS class
+                lightbox.classList.add('is-visible');
             });
         });
 
-        closeButton.addEventListener('click', () => {
-            lightbox.style.display = 'none';
-        });
+        const closeLightbox = () => {
+            // To close, we remove the CSS class
+            lightbox.classList.remove('is-visible');
+        };
 
+        closeButton.addEventListener('click', closeLightbox);
         lightbox.addEventListener('click', e => {
             if (e.target === lightbox) {
-                lightbox.style.display = 'none';
+                closeLightbox();
             }
         });
     </script>
