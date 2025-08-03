@@ -1,4 +1,4 @@
-/* style.css - Final Version with Enhanced Mobile Responsiveness */
+/* style.css - Final Version with Mobile Hero Image Fix */
 
 /* 1. Variables & Fonts */
 :root {
@@ -113,18 +113,27 @@ footer { background-color: var(--primary-color); color: var(--white); padding: 2
     nav a::after { display: none; }
 
     /* 英雄區塊 (Hero Section) */
-    .hero-content { flex-direction: column-reverse; } /* 在手機上讓圖片顯示在文字上方 */
-    .hero-text { padding: 2rem 1.5rem; } /* 縮小左右 padding */
-    .hero-text h2 { font-size: 1.8rem; } /* 縮小主標題字體 */
+    .hero-content { flex-direction: column-reverse; }
+    .hero-text { padding: 2rem 1.5rem; text-align: center; } /* 文字置中 */
+    .hero-text h2 { font-size: 1.8rem; }
+    
+    /* ====================================================== */
+    /* == 新增：手機版英雄區塊圖片修正 == */
+    /* ====================================================== */
+    .hero-image {
+        flex-basis: auto; /* 重置 flex-basis */
+        width: 100%;      /* 寬度設為100% */
+        max-height: 250px; /* 給予一個合理的最大高度 */
+    }
 
     /* 通用內容區塊 (Card UI) */
     .info-section {
-        padding: 1.5rem; /* 縮小卡片內距 */
+        padding: 1.5rem;
     }
 
     /* 研究領域網格 (Research Grid) */
     .research-grid {
-        grid-template-columns: 1fr; /* 在手機上強制網格變為單欄顯示 */
+        grid-template-columns: 1fr;
     }
 }
 
