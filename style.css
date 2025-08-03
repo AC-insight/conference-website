@@ -1,4 +1,4 @@
-/* style.css - Final Corrected Version 2.1 */
+/* style.css - Final Version with Enhanced Mobile Responsiveness */
 
 /* 1. Variables & Fonts */
 :root {
@@ -27,92 +27,110 @@ h1, h2, h3 { font-family: var(--font-heading); }
 h1 { font-weight: 700; }
 h2, h3 { font-weight: 700; }
 
-/* ... (All other styles like Header, Nav, Hero, Cards, etc. remain the same) ... */
+/* Header */
 header { background-color: var(--primary-color); color: var(--white); padding: 2rem 0; text-align: center; }
 header h1 a { color: inherit; text-decoration: none; }
 header .subtitle { font-size: 1.1rem; opacity: 0.9; margin-top: 0.5rem; font-style: italic; }
+
+/* Sticky Navigation */
 nav { background-color: var(--white); box-shadow: 0 2px 4px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 10; }
 .nav-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; padding: 1rem 0; }
 nav a { color: var(--primary-color); text-decoration: none; font-weight: bold; position: relative; }
 nav a::after { content: ''; display: block; width: 0; height: 3px; background: var(--secondary-color); transition: width .3s; position: absolute; bottom: -5px; left: 0; }
 nav a:hover::after { width: 100%; }
+
+/* Main Content */
 main { margin: 2rem 0; }
-.hero-section { border-radius: 10px; overflow: hidden; margin-bottom: 2rem; color: var(--white); background: linear-gradient(135deg, var(--primary-color) 0%, #0062a8 100%); }
+
+/* Hero Section */
+.hero-section {
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 2rem;
+    color: var(--white);
+    background: linear-gradient(135deg, var(--primary-color) 0%, #0062a8 100%);
+}
 .hero-content { display: flex; flex-wrap: wrap; align-items: center; }
-.hero-image { flex: 1 1 40%; object-fit: contain; width: 100%; height: auto; }
+.hero-image { flex: 1 1 40%; max-height: 400px; object-fit: cover; }
 .hero-text { flex: 1 1 60%; padding: 3rem; }
 .hero-text h2, .hero-text p { color: var(--white); }
 .hero-text h2 { font-size: 2.5rem; line-height: 1.2; }
 .cta-button { background-color: rgba(255, 255, 255, 0.9); color: var(--primary-color); display: inline-block; text-decoration: none; border-radius: 5px; font-weight: bold; transition: transform .2s; padding: 0.75rem 1.5rem; margin-top: 1rem; }
 .cta-button:hover { transform: translateY(-3px); }
-.info-section { background: var(--white); padding: 2.5rem; border-radius: 12px; box-shadow: 0 6px 20px rgba(0, 0, 0, 0.07); transition: transform 0.3s ease, box-shadow 0.3s ease; margin-bottom: 2rem; }
-.info-section:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); }
+
+/* Card UI */
+.info-section {
+    background: var(--white);
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.07);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 2rem;
+}
+.info-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
 .info-section h2 { color: var(--primary-color); margin-bottom: 1.5rem; text-align: center; }
+
+/* Mission & Vision Section */
 .mission-vision-container { display: flex; flex-wrap: wrap; gap: 2rem; }
 .mission-item { flex: 1 1 300px; }
 .mission-item h3 { color: var(--secondary-color); margin-bottom: 0.5rem; }
+
+/* Research Grid Section */
 .research-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1.5rem; }
 .research-card { background-color: #fafafa; border-left: 5px solid var(--secondary-color); padding: 1.5rem; border-radius: 8px; transition: background-color 0.3s ease; }
 .research-card:hover { background-color: #f1f1f1; }
 .research-card h3 { color: var(--primary-color); margin-bottom: 0.5rem; }
+
+/* Publication Section */
 .publication-item h3 { color: var(--secondary-color); font-size: 1.25rem; margin-bottom: 0.75rem; }
 .publication-item .authors { font-style: italic; margin-bottom: 1rem; }
 .secondary-button { background-color: var(--primary-color); color: var(--white); padding: 0.5rem 1rem; margin-top: 1rem; display: inline-block; text-decoration: none; border-radius: 5px; font-weight: bold; transition: transform .2s; }
 .secondary-button:hover { transform: translateY(-3px); }
+
+/* Photo Gallery */
 .gallery-container { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem; margin-top: 1.5rem; }
 .gallery-item { position: relative; overflow: hidden; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); height: 180px; }
 .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease; }
 .gallery-item:hover img { transform: scale(1.1); }
 .gallery-item::after { content: attr(data-caption); position: absolute; bottom: 0; left: 0; width: 100%; background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%); color: var(--white); padding: 1.5rem 1rem 0.5rem 1rem; font-size: 0.9rem; transform: translateY(100%); transition: transform 0.3s ease; }
 .gallery-item:hover::after { transform: translateY(0); }
+
+/* Footer */
 footer { background-color: var(--primary-color); color: var(--white); padding: 2rem 0; text-align: center; }
 .regional-offices { margin-top: 0.5rem; opacity: 0.8; font-size: 0.9rem; }
+
+/* ====================================================== */
+/* == 響應式設計 (手機版樣式) == */
+/* ====================================================== */
 @media (max-width: 768px) {
+    /* 導覽列 */
     .nav-container { flex-direction: column; gap: 0.5rem; padding: 0.5rem 0; }
     nav a { padding: 0.5rem 1rem; border-radius: 5px; text-align: center; }
     nav a:hover { background-color: var(--bg-color); }
     nav a::after { display: none; }
-    .hero-content { flex-direction: column-reverse; }
-    .hero-text { padding: 2rem; }
-    .hero-text h2 { font-size: 2rem; }
+
+    /* 英雄區塊 (Hero Section) */
+    .hero-content { flex-direction: column-reverse; } /* 在手機上讓圖片顯示在文字上方 */
+    .hero-text { padding: 2rem 1.5rem; } /* 縮小左右 padding */
+    .hero-text h2 { font-size: 1.8rem; } /* 縮小主標題字體 */
+
+    /* 通用內容區塊 (Card UI) */
+    .info-section {
+        padding: 1.5rem; /* 縮小卡片內距 */
+    }
+
+    /* 研究領域網格 (Research Grid) */
+    .research-grid {
+        grid-template-columns: 1fr; /* 在手機上強制網格變為單欄顯示 */
+    }
 }
 
-/* ====================================================== */
-/* == CORRECTED: Lightbox Styles == */
-/* ====================================================== */
-.lightbox {
-    /* The lightbox is hidden by default */
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.85);
-}
-
-/* This new class will be added by JavaScript to show the lightbox */
-.lightbox.is-visible {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.lightbox-content {
-    max-width: 90%;
-    max-height: 80%;
-    object-fit: contain;
-}
-
-.close-button {
-    position: absolute;
-    top: 20px;
-    right: 35px;
-    color: #fff;
-    font-size: 40px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: color 0.3s ease;
-}
+/* Lightbox Styles */
+.lightbox { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.85); display: flex; align-items: center; justify-content: center; }
+.lightbox.is-visible { display: flex; }
+.lightbox-content { max-width: 90%; max-height: 80%; object-fit: contain; }
+.close-button { position: absolute; top: 20px; right: 35px; color: #fff; font-size: 40px; font-weight: bold; cursor: pointer; transition: color 0.3s ease; }
 .close-button:hover { color: #bbb; }
