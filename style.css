@@ -1,4 +1,4 @@
-/* style.css - Final Corrected Version 2.2 */
+/* style.css - Final Version with Accessibility Upgrades */
 
 /* 1. Variables & Fonts */
 :root {
@@ -32,7 +32,9 @@ header { background-color: var(--primary-color); color: var(--white); padding: 2
 header h1 a { color: inherit; text-decoration: none; }
 header .subtitle { font-size: 1.1rem; opacity: 0.9; margin-top: 0.5rem; font-style: italic; }
 
-/* Sticky Navigation (Desktop Only) */
+/* ====================================================== */
+/* == 修正：導覽列樣式以適應新的 ul/li 結構 == */
+/* ====================================================== */
 nav {
     background-color: var(--white);
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
@@ -40,54 +42,52 @@ nav {
     top: 0;
     z-index: 10;
 }
-.nav-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; padding: 1rem 0; }
-nav a { color: var(--primary-color); text-decoration: none; font-weight: bold; position: relative; }
-nav a::after { content: ''; display: block; width: 0; height: 3px; background: var(--secondary-color); transition: width .3s; position: absolute; bottom: -5px; left: 0; }
-nav a:hover::after { width: 100%; }
+.nav-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    padding: 1rem 0;
+    list-style: none; /* 移除列表的預設圓點 */
+    margin: 0;
+}
+.nav-list a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+    display: block; /* 讓連結填滿 <li> 空間 */
+}
+.nav-list a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 3px;
+    background: var(--secondary-color);
+    transition: width .3s;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+}
+.nav-list a:hover::after {
+    width: 100%;
+}
 
 /* Main Content */
 main { margin: 2rem 0; }
 
-/* Hero Section */
-.hero-section {
-    border-radius: 10px;
-    overflow: hidden;
-    margin-bottom: 2rem;
-    color: var(--white);
-    background: linear-gradient(135deg, var(--primary-color) 0%, #0062a8 100%);
-}
+/* ... (其餘所有樣式，如 Hero, Cards, Gallery, Footer 等，都維持不變) ... */
+.hero-section { border-radius: 10px; overflow: hidden; margin-bottom: 2rem; color: var(--white); background: linear-gradient(135deg, var(--primary-color) 0%, #0062a8 100%); }
 .hero-content { display: flex; flex-wrap: wrap; align-items: center; }
-/* ====================================================== */
-/* == 修正：電腦版英雄區塊圖片樣式 == */
-/* ====================================================== */
-.hero-image {
-    flex: 1 1 40%;
-    object-fit: contain; /* 確保圖片完整顯示，不裁切 */
-    width: 100%;
-    height: auto; /* 高度自動調整以保持比例 */
-}
+.hero-image { flex: 1 1 40%; object-fit: contain; width: 100%; height: auto; }
 .hero-text { flex: 1 1 60%; padding: 3rem; }
 .hero-text h2, .hero-text p { color: var(--white); }
 .hero-text h2 { font-size: 2.5rem; line-height: 1.2; }
 .cta-button { background-color: rgba(255, 255, 255, 0.9); color: var(--primary-color); display: inline-block; text-decoration: none; border-radius: 5px; font-weight: bold; transition: transform .2s; padding: 0.75rem 1.5rem; margin-top: 1rem; }
 .cta-button:hover { transform: translateY(-3px); }
-
-/* Card UI */
-.info-section {
-    background: var(--white);
-    padding: 2.5rem;
-    border-radius: 12px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.07);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    margin-bottom: 2rem;
-}
-.info-section:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-}
+.info-section { background: var(--white); padding: 2.5rem; border-radius: 12px; box-shadow: 0 6px 20px rgba(0, 0, 0, 0.07); transition: transform 0.3s ease, box-shadow 0.3s ease; margin-bottom: 2rem; }
+.info-section:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); }
 .info-section h2 { color: var(--primary-color); margin-bottom: 1.5rem; text-align: center; }
-
-/* ... (其他如 Mission, Research, Publication, Gallery 的樣式維持不變) ... */
 .mission-vision-container { display: flex; flex-wrap: wrap; gap: 2rem; }
 .mission-item { flex: 1 1 300px; }
 .mission-item h3 { color: var(--secondary-color); margin-bottom: 0.5rem; }
@@ -105,23 +105,16 @@ main { margin: 2rem 0; }
 .gallery-item:hover img { transform: scale(1.1); }
 .gallery-item::after { content: attr(data-caption); position: absolute; bottom: 0; left: 0; width: 100%; background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%); color: var(--white); padding: 1.5rem 1rem 0.5rem 1rem; font-size: 0.9rem; transform: translateY(100%); transition: transform 0.3s ease; }
 .gallery-item:hover::after { transform: translateY(0); }
-
-/* Footer */
 footer { background-color: var(--primary-color); color: var(--white); padding: 2rem 0; text-align: center; }
 .regional-offices { margin-top: 0.5rem; opacity: 0.8; font-size: 0.9rem; }
 
-/* ====================================================== */
-/* == 響應式設計 (手機版樣式) == */
-/* ====================================================== */
 @media (max-width: 768px) {
-    html { scroll-padding-top: 0; } /* 手機版不需要 scroll-padding */
-    nav {
-        position: static; /* 修正：手機版導覽列不再黏滯 */
-    }
-    .nav-container { flex-direction: column; gap: 0.5rem; padding: 0.5rem 0; }
-    nav a { padding: 0.5rem 1rem; border-radius: 5px; text-align: center; }
-    nav a:hover { background-color: var(--bg-color); }
-    nav a::after { display: none; }
+    html { scroll-padding-top: 0; }
+    nav { position: static; }
+    .nav-list { flex-direction: column; gap: 0.5rem; padding: 0.5rem 0; }
+    .nav-list a { padding: 0.5rem 1rem; border-radius: 5px; text-align: center; }
+    .nav-list a:hover { background-color: var(--bg-color); }
+    .nav-list a::after { display: none; }
     .hero-content { flex-direction: column-reverse; }
     .hero-text { padding: 2rem 1.5rem; text-align: center; }
     .hero-text h2 { font-size: 1.8rem; }
@@ -129,26 +122,8 @@ footer { background-color: var(--primary-color); color: var(--white); padding: 2
     .info-section { padding: 1.5rem; }
     .research-grid { grid-template-columns: 1fr; }
 }
-
-/* ====================================================== */
-/* == 修正：燈箱樣式 == */
-/* ====================================================== */
-.lightbox {
-    display: none; /* 修正：燈箱預設為隱藏 */
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.85);
-}
-/* 這個 class 將由 JavaScript 添加，用來顯示燈箱 */
-.lightbox.is-visible {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+.lightbox { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.85); }
+.lightbox.is-visible { display: flex; align-items: center; justify-content: center; }
 .lightbox-content { max-width: 90%; max-height: 80%; object-fit: contain; }
 .close-button { position: absolute; top: 20px; right: 35px; color: #fff; font-size: 40px; font-weight: bold; cursor: pointer; transition: color 0.3s ease; }
 .close-button:hover { color: #bbb; }

@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 1. 新增：對搜尋引擎友善的網站描述 -->
+    <meta name="description" content="Official website of the AC-INSIGHT Consortium, a research alliance focused on healthy aging and the digitalization of health promotion in Asia.">
+    
     <title>AC-INSIGHT Consortium</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,12 +24,15 @@
     </header>
 
     <nav>
+        <!-- 2. 強化：使用 ul/li 結構，提升導覽列的語意化與可及性 -->
         <div class="nav-container container">
-            <a href="#about">About Us</a>
-            <a href="#research">Research</a>
-            <a href="#history">History</a>
-            <a href="#publications">Publications</a>
-            <a href="#join">Join Us</a>
+            <ul class="nav-list" role="menubar" aria-label="Main navigation">
+                <li role="none"><a href="#about" role="menuitem">About Us</a></li>
+                <li role="none"><a href="#research" role="menuitem">Research</a></li>
+                <li role="none"><a href="#history" role="menuitem">History</a></li>
+                <li role="none"><a href="#publications" role="menuitem">Publications</a></li>
+                <li role="none"><a href="#join" role="menuitem">Join Us</a></li>
+            </ul>
         </div>
     </nav>
 
@@ -122,13 +128,15 @@
         <section id="join" class="info-section">
             <h2>Join the Movement</h2>
             <p>AC-INSIGHT welcomes active researchers who share our passion for transforming aging through collaborative science. Whether you're an established investigator or an emerging scientist, our consortium offers unparalleled opportunities for impactful collaboration.</p>
-             <a href="mailto:[Enter Contact Email]" class="cta-button">Contact Us to Collaborate</a>
+             <!-- 3. 更新：填上範例聯絡信箱 -->
+             <a href="mailto:contact@ac-insight.org" class="cta-button">Contact Us to Collaborate</a>
         </section>
     </main>
 
     <footer id="contact">
         <div class="container">
-            <p>Contact Us | [Enter Contact Email]</p>
+             <!-- 3. 更新：填上範例聯絡信箱 -->
+            <p>Contact Us | contact@ac-insight.org</p>
             <p class="regional-offices">Regional Offices: Fukuoka | Busan | Taipei | Chongqing</p>
         </div>
     </footer>
@@ -159,6 +167,13 @@
         closeButton.addEventListener('click', closeLightbox);
         lightbox.addEventListener('click', e => {
             if (e.target === lightbox) {
+                closeLightbox();
+            }
+        });
+
+        // 4. 新增：燈箱的鍵盤支援 (按 Esc 關閉)
+        window.addEventListener('keydown', e => {
+            if (e.key === 'Escape' && lightbox.classList.contains('is-visible')) {
                 closeLightbox();
             }
         });
