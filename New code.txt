@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -208,3 +209,172 @@
     </script>
 </body>
 </html>
+```
+
+---
+
+### **第二步：最終升級版的 `style.css` 程式碼**
+
+這份 CSS 檔案的主要改動是更新了導覽列的樣式選擇器，以完美適應我們在 HTML 中使用的新 `<ul><li>` 結構。
+
+**請用這份更新後的完整程式碼，直接取代你現有的 `style.css` 檔案內容。**
+
+
+```css
+/* style.css - Final Version with Professional Upgrades */
+
+/* 1. Variables & Fonts */
+:root {
+    --primary-color: #004a7c;
+    --secondary-color: #e67e22;
+    --bg-color: #f4f4f4;
+    --text-color: #333;
+    --white: #fff;
+    --font-heading: 'Montserrat', sans-serif;
+    --font-body: 'Roboto', sans-serif;
+}
+
+/* Reset */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* Global Styles */
+html { scroll-padding-top: 80px; scroll-behavior: smooth; }
+body {
+    font-family: var(--font-body);
+    line-height: 1.6;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+.container { width: 90%; max-width: 1200px; margin: 0 auto; }
+h1, h2, h3 { font-family: var(--font-heading); }
+h1 { font-weight: 700; }
+h2, h3 { font-weight: 700; }
+
+/* Header */
+header { background-color: var(--primary-color); color: var(--white); padding: 2rem 0; text-align: center; }
+header h1 a { color: inherit; text-decoration: none; }
+header .subtitle { font-size: 1.1rem; opacity: 0.9; margin-top: 0.5rem; font-style: italic; }
+
+/* ====================================================== */
+/* == 修正：導覽列樣式以適應新的 ul/li 結構 == */
+/* ====================================================== */
+nav {
+    background-color: var(--white);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+.nav-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    padding: 1rem 0;
+    list-style: none; /* 移除列表的預設圓點 */
+    margin: 0;
+}
+.nav-list a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+    display: block; /* 讓連結填滿 <li> 空間 */
+    padding: 0.25rem 0;
+}
+.nav-list a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 3px;
+    background: var(--secondary-color);
+    transition: width .3s;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+}
+.nav-list a:hover::after {
+    width: 100%;
+}
+
+/* ... (其餘所有樣式，如 Hero, Cards, Gallery, Footer 等，都維持不變) ... */
+main { margin: 2rem 0; }
+.hero-section { border-radius: 10px; overflow: hidden; margin-bottom: 2rem; color: var(--white); background: linear-gradient(135deg, var(--primary-color) 0%, #0062a8 100%); }
+.hero-content { display: flex; flex-wrap: wrap; align-items: center; }
+.hero-image { flex: 1 1 40%; object-fit: contain; width: 100%; height: auto; }
+.hero-text { flex: 1 1 60%; padding: 3rem; }
+.hero-text h2, .hero-text p { color: var(--white); }
+.hero-text h2 { font-size: 2.5rem; line-height: 1.2; }
+.cta-button { background-color: rgba(255, 255, 255, 0.9); color: var(--primary-color); display: inline-block; text-decoration: none; border-radius: 5px; font-weight: bold; transition: transform .2s; padding: 0.75rem 1.5rem; margin-top: 1rem; }
+.cta-button:hover { transform: translateY(-3px); }
+.info-section { background: var(--white); padding: 2.5rem; border-radius: 12px; box-shadow: 0 6px 20px rgba(0, 0, 0, 0.07); transition: transform 0.3s ease, box-shadow 0.3s ease; margin-bottom: 2rem; }
+.info-section:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); }
+.info-section h2 { color: var(--primary-color); margin-bottom: 1.5rem; text-align: center; }
+.mission-vision-container { display: flex; flex-wrap: wrap; gap: 2rem; }
+.mission-item { flex: 1 1 300px; }
+.mission-item h3 { color: var(--secondary-color); margin-bottom: 0.5rem; }
+.research-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1.5rem; }
+.research-card { background-color: #fafafa; border-left: 5px solid var(--secondary-color); padding: 1.5rem; border-radius: 8px; transition: background-color 0.3s ease; }
+.research-card:hover { background-color: #f1f1f1; }
+.research-card h3 { color: var(--primary-color); margin-bottom: 0.5rem; }
+.publication-item h3 { color: var(--secondary-color); font-size: 1.25rem; margin-bottom: 0.75rem; }
+.publication-item .authors { font-style: italic; margin-bottom: 1rem; }
+.secondary-button { background-color: var(--primary-color); color: var(--white); padding: 0.5rem 1rem; margin-top: 1rem; display: inline-block; text-decoration: none; border-radius: 5px; font-weight: bold; transition: transform .2s; }
+.secondary-button:hover { transform: translateY(-3px); }
+.gallery-container { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem; margin-top: 1.5rem; }
+.gallery-item { position: relative; overflow: hidden; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); height: 180px; }
+.gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease; }
+.gallery-item:hover img { transform: scale(1.1); }
+.gallery-item::after { content: attr(data-caption); position: absolute; bottom: 0; left: 0; width: 100%; background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%); color: var(--white); padding: 1.5rem 1rem 0.5rem 1rem; font-size: 0.9rem; transform: translateY(100%); transition: transform 0.3s ease; }
+.gallery-item:hover::after { transform: translateY(0); }
+footer { background-color: var(--primary-color); color: var(--white); padding: 2rem 0; text-align: center; }
+.regional-offices { margin-top: 0.5rem; opacity: 0.8; font-size: 0.9rem; }
+
+@media (max-width: 768px) {
+    html { scroll-padding-top: 0; }
+    nav { position: static; }
+    .nav-list { flex-direction: column; gap: 0.5rem; padding: 0.5rem 0; }
+    .nav-list a { padding: 0.5rem 1rem; border-radius: 5px; text-align: center; }
+    .nav-list a:hover { background-color: var(--bg-color); }
+    .nav-list a::after { display: none; }
+    .hero-content { flex-direction: column-reverse; }
+    .hero-text { padding: 2rem 1.5rem; text-align: center; }
+    .hero-text h2 { font-size: 1.8rem; }
+    .hero-image { flex-basis: auto; width: 100%; max-height: 250px; }
+    .info-section { padding: 1.5rem; }
+    .research-grid { grid-template-columns: 1fr; }
+}
+.lightbox { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.85); }
+.lightbox.is-visible { display: flex; align-items: center; justify-content: center; }
+.lightbox-content { max-width: 90%; max-height: 80%; object-fit: contain; }
+.lightbox-caption { color: var(--white); margin-top: 1rem; text-align: center; }
+.close-button { position: absolute; top: 20px; right: 35px; color: #fff; font-size: 40px; font-weight: bold; cursor: pointer; transition: color 0.3s ease; }
+.close-button:hover { color: #bbb; }
+```
+
+---
+
+### **第三步：你需要提供的進一步資訊**
+
+這次的程式碼升級，已經將所有**不需你提供額外檔案**的建議都實作完畢了。現在，輪到你來完成剩下的部分，讓網站達到真正的完美。
+
+**你的待辦清單 (To-Do List):**
+
+1.  **更新聯絡信箱**：
+    * **動作**：在我提供的 `index.html` 中，找到 `mailto:contact@ac-insight.org` 和 `contact@ac-insight.org` 這兩處，將它們換成你們聯盟**實際使用的聯絡信箱**。
+
+2.  **提供網站圖示 (Favicon)**：
+    * **說明**：Favicon 就是顯示在瀏覽器分頁上的那個小圖示，是網站品牌識別的重要一環。
+    * **動作**：你需要請設計師提供一個正方形的、通常是 `16x16` 或 `32x32` 像素的 `.ico` 或 `.png` 格式的圖檔。將它命名為 `favicon.ico`，並**放置在你專案的根目錄下**（與 `index.html` 同層）。我已經在 `index.html` 的 `<head>` 區塊加入了載入它的程式碼。
+
+3.  **優化圖片 (長期任務)**：
+    * **說明**：為了讓網站載入得更快，特別是在網路速度較慢的地區，優化圖片是必要的。
+    * **動作**：
+        * **壓縮**：將你 `images` 資料夾中的所有照片，使用像 [TinyPNG](https://tinypng.com/) 這樣的線上工具進行壓縮，可以在不犧牲太多畫質的情況下，大幅減少檔案大小。
+        * **格式**：考慮將圖片轉換為 `WebP` 這種更現代、壓縮率更高的格式。
+
+4.  **提供社群分享用的代表圖**：
+    * **說明**：當有人在 Facebook 或 Twitter 上分享你的網站連結時，會出現一張預覽圖。我們在 `index.html` 的 `<meta property="og:image"...>` 標籤中設定了這張圖的路徑。
+    * **動作**：請確認 `images/conference-photo.png` 這張圖是你希望被用來當作社群分享預覽圖的。如果不是，請提供一張更具代表性的圖片（建議尺寸為 1200x630 像素），並更新 `index.html` 中的路徑。
+
+完成以上這些由你主導的任務後，你的網站就真正達到了專業級的
