@@ -1,6 +1,15 @@
-/* style.css - Merged Final Version */
+/* style.css - Final Fixed Version */
 
-/* 1. Variables & Fonts */
+/* ========================================= */
+/* 1. RESET: 解決頂部空白與邊距問題 (關鍵) */
+/* ========================================= */
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
+/* 2. Variables & Fonts */
 :root {
     --primary-color: #004a7c;
     --primary-dark: #003357;
@@ -14,9 +23,6 @@
     --shadow-sm: 0 2px 8px rgba(0,0,0,0.05);
     --shadow-md: 0 8px 24px rgba(0,0,0,0.08);
 }
-
-/* Reset */
-* { margin: 0; padding: 0; box-sizing: border-box; }
 
 /* Global Styles */
 html { scroll-padding-top: 100px; scroll-behavior: smooth; }
