@@ -1,4 +1,4 @@
-/* style.css - International Standard Version */
+/* style.css - Final Polished Version */
 
 /* ========================================= */
 /* 1. BASE & RESET */
@@ -24,11 +24,11 @@
     --shadow-sm: 0 2px 8px rgba(0,0,0,0.05);
     --shadow-md: 0 8px 24px rgba(0,0,0,0.08);
     
-    --nav-height: 80px; /* 定義導覽列高度變數 */
+    --nav-height: 80px;
 }
 
 html { 
-    scroll-padding-top: var(--nav-height); /* 與導覽列高度一致 */
+    scroll-padding-top: var(--nav-height);
     scroll-behavior: smooth; 
 }
 
@@ -48,7 +48,6 @@ body {
 a { text-decoration: none; color: inherit; transition: color 0.2s; }
 img { max-width: 100%; display: block; }
 
-/* Typography */
 h1, h2, h3 { font-family: var(--font-heading); color: var(--primary-color); }
 h1 { font-weight: 800; letter-spacing: -0.5px; }
 h2 { font-weight: 700; margin-bottom: 1.5rem; }
@@ -59,7 +58,7 @@ h2 { font-weight: 700; margin-bottom: 1.5rem; }
 .site-header { 
     background-color: var(--primary-color); 
     color: var(--white); 
-    padding: 3rem 0 2rem; /* 增加下方空間，替代原本的負 margin */
+    padding: 3rem 0 2rem;
     text-align: center;
 }
 
@@ -81,7 +80,6 @@ h2 { font-weight: 700; margin-bottom: 1.5rem; }
     border-bottom: 1px solid rgba(0,0,0,0.05);
 }
 
-/* 解決：明確定義 Nav Container 樣式 */
 .nav-container {
     display: flex;
     justify-content: center;
@@ -117,28 +115,22 @@ h2 { font-weight: 700; margin-bottom: 1.5rem; }
 /* ========================================= */
 /* 3. SECTIONS & LAYOUT */
 /* ========================================= */
-main { 
-    /* 移除 margin-top，因為 Header 不再使用負 margin */
-    padding-bottom: 4rem; 
-}
+main { padding-bottom: 4rem; }
 
-/* 通用區塊樣式 */
 .section-block {
     padding: 4rem 0;
     border-bottom: 1px solid rgba(0,0,0,0.03);
 }
 
-/* 區塊標題置中 */
 .section-title { text-align: center; font-size: 2rem; margin-bottom: 2.5rem; }
 
-/* Card Component */
 .card {
     background: var(--white);
     padding: 2rem;
     border-radius: 12px;
     box-shadow: var(--shadow-sm);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    height: 100%; /* 讓 Grid 中的卡片等高 */
+    height: 100%;
 }
 .card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); }
 
@@ -175,20 +167,18 @@ main {
 /* 4. SPECIFIC SECTIONS */
 /* ========================================= */
 
-/* Hero Section */
+/* Hero */
 .section-hero {
     background: linear-gradient(135deg, var(--primary-color) 0%, #0062a8 100%);
     color: var(--white);
-    padding: 0; /* Remove padding to let content stretch */
+    padding: 0;
     overflow: hidden;
 }
-
 .hero-layout {
     display: flex;
     align-items: center;
     min-height: 500px;
 }
-
 .hero-content { flex: 1; padding: 4rem 2rem 4rem 0; }
 .hero-tag { 
     background: rgba(255,255,255,0.2); 
@@ -199,87 +189,52 @@ main {
 }
 .hero-content h2 { color: var(--white); font-size: 2.5rem; line-height: 1.2; margin-bottom: 1.5rem; }
 .hero-content p { opacity: 0.9; margin-bottom: 2rem; font-size: 1.1rem; }
-
 .hero-media { 
-    flex: 1; 
-    height: 100%; 
-    position: relative; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    flex: 1; height: 100%; position: relative; 
+    display: flex; justify-content: center; align-items: center;
 }
 .hero-img { 
-    width: 100%; 
-    height: auto; 
-    object-fit: cover; 
-    border-radius: 8px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    width: 100%; height: auto; object-fit: cover; 
+    border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.2);
 }
 
-/* About (Mission) */
-.grid-2-col {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-}
+/* About & Research */
+.grid-2-col { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
 .mission-card h3 { color: var(--secondary-color); margin-bottom: 1rem; }
-
-/* Research Grid */
-.grid-research {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
-}
+.grid-research { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; }
 .research-card { border-left: 4px solid var(--secondary-color); }
 .research-card h3 { margin-bottom: 0.8rem; font-size: 1.2rem; }
 
 /* Timeline */
 .section-history { background-color: var(--white); }
 .timeline {
-    position: relative;
-    padding-left: 2rem;
-    border-left: 2px solid var(--gray-light);
-    max-width: 800px;
-    margin: 0 auto;
+    position: relative; padding-left: 2rem; border-left: 2px solid var(--gray-light);
+    max-width: 800px; margin: 0 auto;
 }
 .timeline-item { margin-bottom: 2.5rem; position: relative; padding-left: 1.5rem; }
 .timeline-marker {
     position: absolute; left: -2.6rem; top: 0.2rem;
-    width: 16px; height: 16px;
-    background: var(--white); border: 3px solid var(--primary-color);
-    border-radius: 50%; z-index: 1;
+    width: 16px; height: 16px; background: var(--white);
+    border: 3px solid var(--primary-color); border-radius: 50%; z-index: 1;
 }
 .timeline-item.is-gap .timeline-marker { border-color: #aaa; background: #aaa; width: 12px; height: 12px; left: -2.5rem; }
-.timeline-year { 
-    display: block; font-weight: 700; color: var(--secondary-color); 
-    font-family: var(--font-heading); font-size: 0.9rem; margin-bottom: 0.3rem; 
-}
+.timeline-year { display: block; font-weight: 700; color: var(--secondary-color); font-size: 0.9rem; margin-bottom: 0.3rem; }
 .timeline-content h3 { margin-bottom: 0.2rem; font-size: 1.2rem; color: var(--primary-dark); }
 
 /* Gallery */
-.gallery-alt-bg { background-color: #fafafa; } /* 釜山場次使用淺灰背景區隔 */
+.gallery-alt-bg { background-color: #fafafa; }
 .section-header { text-align: center; margin-bottom: 2rem; }
 .section-subtitle { display: block; color: #777; font-weight: 600; margin-top: 0.5rem; }
 .section-intro { text-align: center; max-width: 700px; margin: 0 auto 2rem; color: #555; }
-
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 1.5rem;
-}
+.gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1.5rem; }
 .gallery-item {
-    position: relative;
-    overflow: hidden;
-    border-radius: 8px;
-    height: 220px;
-    cursor: pointer;
-    box-shadow: var(--shadow-sm);
+    position: relative; overflow: hidden; border-radius: 8px;
+    height: 220px; cursor: pointer; box-shadow: var(--shadow-sm);
 }
 .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
 .gallery-item:hover img { transform: scale(1.1); }
 .gallery-item::after {
-    content: attr(data-caption);
-    position: absolute; bottom: 0; left: 0; width: 100%;
+    content: attr(data-caption); position: absolute; bottom: 0; left: 0; width: 100%;
     background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
     color: white; padding: 1.5rem 1rem 0.8rem;
     transform: translateY(100%); transition: transform 0.3s;
@@ -287,44 +242,24 @@ main {
 }
 .gallery-item:hover::after { transform: translateY(0); }
 
-/* Publications */
+/* Publications & Footer */
 .publication-card { text-align: center; max-width: 800px; margin: 0 auto; }
-.badge { 
-    background: #eef2f7; color: var(--primary-color); 
-    font-size: 0.75rem; padding: 0.3rem 0.8rem; border-radius: 4px; 
-    font-weight: 700; display: inline-block; margin-bottom: 1rem;
-}
+.badge { background: #eef2f7; color: var(--primary-color); font-size: 0.75rem; padding: 0.3rem 0.8rem; border-radius: 4px; font-weight: 700; display: inline-block; margin-bottom: 1rem; }
 .authors { font-style: italic; margin-bottom: 1.5rem; color: #555; }
-
-/* CTA Join */
 .section-cta { text-align: center; background-color: #f0f4f8; }
-
-/* Footer */
-.site-footer { 
-    background-color: var(--primary-dark); 
-    color: var(--white); 
-    padding: 4rem 0 2rem; 
-    text-align: center; 
-}
+.site-footer { background-color: var(--primary-dark); color: var(--white); padding: 4rem 0 2rem; text-align: center; }
 .footer-brand { font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; }
-.regional-offices { opacity: 0.8; font-size: 0.9rem; margin: 1rem 0; }
 .copyright { margin-top: 2rem; opacity: 0.5; font-size: 0.8rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1rem; }
 
-/* ========================================= */
-/* 5. LIGHTBOX */
-/* ========================================= */
+/* Lightbox */
 .lightbox { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.9); }
 .lightbox.is-visible { display: flex; align-items: center; justify-content: center; }
 .lightbox-content { max-width: 90%; max-height: 80%; object-fit: contain; }
 .lightbox-caption { position: absolute; bottom: 20px; color: var(--white); text-align: center; width: 100%; }
-.close-button { 
-    position: absolute; top: 20px; right: 30px; 
-    color: #fff; font-size: 40px; font-weight: bold; 
-    cursor: pointer; background: none; border: none;
-}
+.close-button { position: absolute; top: 20px; right: 30px; color: #fff; font-size: 40px; font-weight: bold; cursor: pointer; background: none; border: none; }
 
 /* ========================================= */
-/* 6. RESPONSIVE MEDIA QUERIES */
+/* 6. RESPONSIVE MEDIA QUERIES (修正版) */
 /* ========================================= */
 @media (max-width: 768px) {
     /* Nav */
@@ -332,11 +267,11 @@ main {
     .nav-list { flex-direction: column; gap: 0.5rem; padding: 0; }
     .nav-list a { padding: 0.5rem 1rem; border-radius: 5px; width: 100%; text-align: center; }
     .nav-list a:hover { background-color: var(--bg-color); }
-    .nav-list a::after { display: none; } /* 移除手機版底線動畫 */
+    .nav-list a::after { display: none; }
 
-    /* Hero */
+    /* Hero - 修正點：使用 .hero-content 讓 padding 生效 */
     .hero-layout { flex-direction: column-reverse; padding-bottom: 2rem; }
-    .hero-text { padding: 2rem 0; text-align: center; }
+    .hero-content { padding: 2rem 1.5rem; text-align: center; } /* 修正：改為 .hero-content */
     .hero-content h2 { font-size: 1.8rem; }
     .hero-media { width: 100%; max-height: 300px; } /* 限制高度 */
     
@@ -344,8 +279,11 @@ main {
     .section-block { padding: 3rem 0; }
     .section-title { font-size: 1.8rem; margin-bottom: 2rem; }
     
-    /* Timeline */
-    .timeline { padding-left: 1rem; border-left: none; } /* 手機版移除左邊線，改用卡片式或簡化 */
-    .timeline-item { padding-left: 0; border-left: 2px solid var(--gray-light); padding-left: 1.5rem; margin-left: 0.5rem;}
+    /* Timeline - 簡化邊線邏輯 */
+    .timeline { padding-left: 1rem; border-left: none; } 
+    .timeline-item { padding-left: 1.5rem; margin-left: 0.5rem; border-left: 2px solid var(--gray-light); }
     .timeline-marker { left: -0.6rem; }
+    
+    /* Research */
+    .research-grid { grid-template-columns: 1fr; }
 }
