@@ -22,15 +22,15 @@
 </head>
 <body>
 
-    <header>
-        <div class="container">
+    <header class="site-header">
+        <div class="container header-container">
             <h1><a href="#">AC-INSIGHT Consortium</a></h1>
             <p class="subtitle">"Aging Well, Together: The Research Alliance Shaping Asia's Future"</p>
         </div>
     </header>
 
-    <nav>
-        <div class="nav-container container">
+    <nav class="site-nav">
+        <div class="container nav-container">
             <ul class="nav-list" role="menubar" aria-label="Main navigation">
                 <li role="none"><a href="#about" role="menuitem">About Us</a></li>
                 <li role="none"><a href="#research" role="menuitem">Research</a></li>
@@ -42,146 +42,169 @@
         </div>
     </nav>
 
-    <main class="container" role="main">
-        <section class="hero-section" aria-labelledby="hero-heading">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <span class="tag">Next: Taipei 2026</span>
+    <main role="main">
+        <section class="section-hero" aria-labelledby="hero-heading">
+            <div class="container hero-layout">
+                <div class="hero-content">
+                    <span class="hero-tag">Next: Taipei 2026</span>
                     <h2 id="hero-heading">Asian Consortium for Innovative Nexus for Sustainable Health Integration and Geriatric Healthcare Transformation</h2>
                     <p>Pioneering scientists from Japan, Korea, Taiwan, and China united to revolutionize healthy aging across borders, disciplines, and technologies.</p>
-                    <a href="#join" class="cta-button">Join the Movement</a>
+                    <a href="#join" class="btn btn-primary">Join the Movement</a>
                 </div>
-                <div class="hero-image-container">
-                    <img src="images/conference-photo.png" alt="A group photo of AC-INSIGHT consortium members." class="hero-image">
-                </div>
-            </div>
-        </section>
-
-        <section id="about" class="info-section" aria-labelledby="about-heading">
-            <h2 id="about-heading">Our Mission & Vision</h2>
-            <div class="mission-vision-container">
-                <div class="mission-item">
-                    <h3>Mission</h3>
-                    <p>To bridge the gap between scientific discovery and practical application, making traditional physical activities more accessible, measurable, and sustainable through technology integration.</p>
-                </div>
-                <div class="mission-item">
-                    <h3>Vision</h3>
-                    <p>To establish a new paradigm for exercise-based healthy aging by 2035, guided by the collective expertise of Asia's leading researchers.</p>
+                <div class="hero-media">
+                    <img src="images/conference-photo.png" alt="A group photo of AC-INSIGHT consortium members." class="hero-img">
                 </div>
             </div>
         </section>
 
-        <section id="research" class="info-section" aria-labelledby="research-heading">
-            <h2 id="research-heading">Core Research Domains</h2>
-            <div class="research-grid">
-                <div class="research-card"><h3>Traditional Exercise</h3><p>Systematically evaluating and optimizing conventional exercise programs.</p></div>
-                <div class="research-card"><h3>E-sports for Training</h3><p>Creating revolutionary platforms at the intersection of gaming technology and gerontology.</p></div>
-                <div class="research-card"><h3>Digital Health</h3><p>Developing comprehensive ecosystems that seamlessly blend traditional exercise with modern tech.</p></div>
-                <div class="research-card"><h3>Sustainable Strategies</h3><p>Ensuring all innovations translate into sustainable real-world programs.</p></div>
+        <section id="about" class="section-block section-mission" aria-labelledby="about-heading">
+            <div class="container">
+                <h2 id="about-heading" class="section-title">Our Mission & Vision</h2>
+                <div class="grid-2-col">
+                    <div class="card mission-card">
+                        <h3>Mission</h3>
+                        <p>To bridge the gap between scientific discovery and practical application, making traditional physical activities more accessible, measurable, and sustainable through technology integration.</p>
+                    </div>
+                    <div class="card mission-card">
+                        <h3>Vision</h3>
+                        <p>To establish a new paradigm for exercise-based healthy aging by 2035, guided by the collective expertise of Asia's leading researchers.</p>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section id="history" class="info-section" aria-labelledby="history-heading">
-            <h2 id="history-heading">Our Journey</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-year">2026</div>
-                    <div class="timeline-content">
-                        <h3>The 4th Conference</h3>
-                        <p>Taipei, Taiwan</p>
-                    </div>
+        <section id="research" class="section-block section-research" aria-labelledby="research-heading">
+            <div class="container">
+                <h2 id="research-heading" class="section-title">Core Research Domains</h2>
+                <div class="grid-research">
+                    <div class="card research-card"><h3>Traditional Exercise</h3><p>Systematically evaluating and optimizing conventional exercise programs.</p></div>
+                    <div class="card research-card"><h3>E-sports for Training</h3><p>Creating revolutionary platforms at the intersection of gaming technology and gerontology.</p></div>
+                    <div class="card research-card"><h3>Digital Health</h3><p>Developing comprehensive ecosystems that seamlessly blend traditional exercise with modern tech.</p></div>
+                    <div class="card research-card"><h3>Sustainable Strategies</h3><p>Ensuring all innovations translate into sustainable real-world programs.</p></div>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-year">2025</div>
-                    <div class="timeline-content">
-                        <h3>The 3rd Conference</h3>
-                        <p>Chongqing, China</p>
+            </div>
+        </section>
+
+        <section id="history" class="section-block section-history" aria-labelledby="history-heading">
+            <div class="container">
+                <h2 id="history-heading" class="section-title">Our Journey</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-year">2026</span>
+                            <h3>The 4th Conference</h3>
+                            <p>Taipei, Taiwan</p>
+                        </div>
                     </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-year">2024</div>
-                    <div class="timeline-content">
-                        <h3>The 2nd Conference</h3>
-                        <p>Busan, South Korea</p>
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-year">2025</span>
+                            <h3>The 3rd Conference</h3>
+                            <p>Chongqing, China</p>
+                        </div>
                     </div>
-                </div>
-                <div class="timeline-item gap">
-                    <div class="timeline-year">2020-23</div>
-                    <div class="timeline-content">
-                        <h3>Pandemic Hiatus</h3>
-                        <p>Conferences canceled due to COVID-19.</p>
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-year">2024</span>
+                            <h3>The 2nd Conference</h3>
+                            <p>Busan, South Korea</p>
+                        </div>
                     </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-year">2019</div>
-                    <div class="timeline-content">
-                        <h3>The 1st Conference</h3>
-                        <p>Fukuoka City, Japan</p>
+                    <div class="timeline-item is-gap">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-year">2020-23</span>
+                            <h3>Pandemic Hiatus</h3>
+                            <p>Conferences canceled due to COVID-19.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-year">2019</span>
+                            <h3>The 1st Conference</h3>
+                            <p>Fukuoka City, Japan</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
         
-        <section id="gallery" class="info-section">
-            <div class="section-header">
-                <h2>The 1st Conference</h2>
-                <span class="section-meta">2019, Fukuoka</span>
-            </div>
-            <p>A glimpse into our beginnings in Fukuoka City, Japan.</p>
-            <div class="gallery-container">
-                <a href="images/2019_fukuoka/photo1.jpg" class="gallery-link"><div class="gallery-item" data-caption="Fukuoka Speaker Presentation"><img src="images/2019_fukuoka/photo1.jpg" alt="Fukuoka conference photo" loading="lazy"></div></a>
-                <a href="images/2019_fukuoka/photo2.jpg" class="gallery-link"><div class="gallery-item" data-caption="Fukuoka Group Photo"><img src="images/2019_fukuoka/photo2.jpg" alt="Fukuoka group photo" loading="lazy"></div></a>
-                <a href="images/2019_fukuoka/photo3.jpg" class="gallery-link"><div class="gallery-item" data-caption="Professor Yung Liao Presentation"><img src="images/2019_fukuoka/photo3.jpg" alt="Professor Yung Liao presenting" loading="lazy"></div></a>
-                <a href="images/2019_fukuoka/photo4.jpg" class="gallery-link"><div class="gallery-item" data-caption="Fukuoka Attendees"><img src="images/2019_fukuoka/photo4.jpg" alt="Fukuoka attendees" loading="lazy"></div></a>
-            </div>
-        </section>
+        <div id="gallery">
+            <section class="section-block section-gallery">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="section-title">The 1st Conference</h2>
+                        <span class="section-subtitle">2019, Fukuoka</span>
+                    </div>
+                    <p class="section-intro">A glimpse into our beginnings in Fukuoka City, Japan.</p>
+                    <div class="gallery-grid">
+                        <a href="images/2019_fukuoka/photo1.jpg" class="gallery-link"><div class="gallery-item" data-caption="Fukuoka Speaker Presentation"><img src="images/2019_fukuoka/photo1.jpg" alt="Fukuoka conference photo" loading="lazy"></div></a>
+                        <a href="images/2019_fukuoka/photo2.jpg" class="gallery-link"><div class="gallery-item" data-caption="Fukuoka Group Photo"><img src="images/2019_fukuoka/photo2.jpg" alt="Fukuoka group photo" loading="lazy"></div></a>
+                        <a href="images/2019_fukuoka/photo3.jpg" class="gallery-link"><div class="gallery-item" data-caption="Professor Yung Liao Presentation"><img src="images/2019_fukuoka/photo3.jpg" alt="Professor Yung Liao presenting" loading="lazy"></div></a>
+                        <a href="images/2019_fukuoka/photo4.jpg" class="gallery-link"><div class="gallery-item" data-caption="Fukuoka Attendees"><img src="images/2019_fukuoka/photo4.jpg" alt="Fukuoka attendees" loading="lazy"></div></a>
+                    </div>
+                </div>
+            </section>
 
-        <section class="info-section">
-            <div class="section-header">
-                <h2>The 2nd Conference</h2>
-                <span class="section-meta">2024, Busan</span>
-            </div>
-            <p>Highlights from our second meeting in Busan, South Korea.</p>
-            <div class="gallery-container">
-                <a href="images/2024_busan/photo1.jpg" class="gallery-link"><div class="gallery-item" data-caption="Busan Presentation"><img src="images/2024_busan/photo1.jpg" alt="Busan presentation" loading="lazy"></div></a>
-                <a href="images/2024_busan/photo2.jpg" class="gallery-link"><div class="gallery-item" data-caption="Busan Co-presentation"><img src="images/2024_busan/photo2.jpg" alt="Busan co-presentation" loading="lazy"></div></a>
-                <a href="images/2024_busan/photo3.jpg" class="gallery-link"><div class="gallery-item" data-caption="Busan Group Photo"><img src="images/2024_busan/photo3.jpg" alt="Busan group photo" loading="lazy"></div></a>
-                <a href="images/2024_busan/photo4.jpg" class="gallery-link"><div class="gallery-item" data-caption="Busan Dinner Gathering"><img src="images/2024_busan/photo4.jpg" alt="Busan dinner" loading="lazy"></div></a>
-            </div>
-        </section>
+            <section class="section-block section-gallery gallery-alt-bg">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="section-title">The 2nd Conference</h2>
+                        <span class="section-subtitle">2024, Busan</span>
+                    </div>
+                    <p class="section-intro">Highlights from our second meeting in Busan, South Korea.</p>
+                    <div class="gallery-grid">
+                        <a href="images/2024_busan/photo1.jpg" class="gallery-link"><div class="gallery-item" data-caption="Busan Presentation"><img src="images/2024_busan/photo1.jpg" alt="Busan presentation" loading="lazy"></div></a>
+                        <a href="images/2024_busan/photo2.jpg" class="gallery-link"><div class="gallery-item" data-caption="Busan Co-presentation"><img src="images/2024_busan/photo2.jpg" alt="Busan co-presentation" loading="lazy"></div></a>
+                        <a href="images/2024_busan/photo3.jpg" class="gallery-link"><div class="gallery-item" data-caption="Busan Group Photo"><img src="images/2024_busan/photo3.jpg" alt="Busan group photo" loading="lazy"></div></a>
+                        <a href="images/2024_busan/photo4.jpg" class="gallery-link"><div class="gallery-item" data-caption="Busan Dinner Gathering"><img src="images/2024_busan/photo4.jpg" alt="Busan dinner" loading="lazy"></div></a>
+                    </div>
+                </div>
+            </section>
 
-        <section class="info-section">
-            <div class="section-header">
-                <h2>The 3rd Conference</h2>
-                <span class="section-meta">2025, Chongqing</span>
-            </div>
-            <p>Snapshots from our gathering in Chongqing, China.</p>
-            <div class="gallery-container">
-                <a href="images/2025_chongqing/photo1.jpeg" class="gallery-link"><div class="gallery-item" data-caption="Chongqing Moment 1"><img src="images/2025_chongqing/photo1.jpeg" alt="Chongqing photo 1" loading="lazy"></div></a>
-                <a href="images/2025_chongqing/photo2.jpeg" class="gallery-link"><div class="gallery-item" data-caption="Chongqing Moment 2"><img src="images/2025_chongqing/photo2.jpeg" alt="Chongqing photo 2" loading="lazy"></div></a>
-                <a href="images/2025_chongqing/photo3.jpeg" class="gallery-link"><div class="gallery-item" data-caption="Chongqing Moment 3"><img src="images/2025_chongqing/photo3.jpeg" alt="Chongqing photo 3" loading="lazy"></div></a>
-                <a href="images/2025_chongqing/photo4.jpeg" class="gallery-link"><div class="gallery-item" data-caption="Chongqing Moment 4"><img src="images/2025_chongqing/photo4.jpeg" alt="Chongqing photo 4" loading="lazy"></div></a>
-            </div>
-        </section>
+            <section class="section-block section-gallery">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="section-title">The 3rd Conference</h2>
+                        <span class="section-subtitle">2025, Chongqing</span>
+                    </div>
+                    <p class="section-intro">Snapshots from our gathering in Chongqing, China.</p>
+                    <div class="gallery-grid">
+                        <a href="images/2025_chongqing/photo1.jpeg" class="gallery-link"><div class="gallery-item" data-caption="Chongqing Moment 1"><img src="images/2025_chongqing/photo1.jpeg" alt="Chongqing photo 1" loading="lazy"></div></a>
+                        <a href="images/2025_chongqing/photo2.jpeg" class="gallery-link"><div class="gallery-item" data-caption="Chongqing Moment 2"><img src="images/2025_chongqing/photo2.jpeg" alt="Chongqing photo 2" loading="lazy"></div></a>
+                        <a href="images/2025_chongqing/photo3.jpeg" class="gallery-link"><div class="gallery-item" data-caption="Chongqing Moment 3"><img src="images/2025_chongqing/photo3.jpeg" alt="Chongqing photo 3" loading="lazy"></div></a>
+                        <a href="images/2025_chongqing/photo4.jpeg" class="gallery-link"><div class="gallery-item" data-caption="Chongqing Moment 4"><img src="images/2025_chongqing/photo4.jpeg" alt="Chongqing photo 4" loading="lazy"></div></a>
+                    </div>
+                </div>
+            </section>
+        </div>
 
-        <section id="publications" class="info-section" aria-labelledby="publications-heading">
-             <h2 id="publications-heading">Featured Publication</h2>
-             <div class="publication-item">
-                 <div class="pub-badge">Narrative Review</div>
-                 <h3>The Impact of Open-Skill Exercises and E-sports on Cognitive Function...</h3>
-                 <p class="authors">Shuzo Kumagai<sup>1,2</sup>, et al.</p>
-                 <a href="https://doi.org/10.3390/brainsci15070682" class="secondary-button" target="_blank">Read Full Paper</a>
+        <section id="publications" class="section-block section-publications" aria-labelledby="publications-heading">
+             <div class="container">
+                 <h2 id="publications-heading" class="section-title">Featured Publication</h2>
+                 <div class="card publication-card">
+                     <span class="badge">Narrative Review</span>
+                     <h3>The Impact of Open-Skill Exercises and E-sports on Cognitive Function...</h3>
+                     <p class="authors">Shuzo Kumagai<sup>1,2</sup>, et al.</p>
+                     <a href="https://doi.org/10.3390/brainsci15070682" class="btn btn-outline" target="_blank">Read Full Paper</a>
+                 </div>
              </div>
         </section>
         
-        <section id="join" class="info-section cta-section" aria-labelledby="join-heading">
-            <h2 id="join-heading">Join the Movement</h2>
-            <p>AC-INSIGHT welcomes active researchers who share our passion for transforming aging through collaborative science.</p>
-             <a href="mailto:contact@ac-insight.org" class="cta-button">Contact Us to Collaborate</a>
+        <section id="join" class="section-block section-cta" aria-labelledby="join-heading">
+            <div class="container">
+                <h2 id="join-heading">Join the Movement</h2>
+                <p>AC-INSIGHT welcomes active researchers who share our passion for transforming aging through collaborative science.</p>
+                 <a href="mailto:contact@ac-insight.org" class="btn btn-primary">Contact Us to Collaborate</a>
+            </div>
         </section>
     </main>
 
-    <footer id="contact">
+    <footer id="contact" class="site-footer">
         <div class="container">
             <p class="footer-brand">AC-INSIGHT Consortium</p>
             <p>Contact Us | contact@ac-insight.org</p>
@@ -191,7 +214,7 @@
     </footer>
 
     <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="lightbox-caption">
-        <span class="close-button" tabindex="0">&times;</span>
+        <button class="close-button" aria-label="Close lightbox">&times;</button>
         <img class="lightbox-content" id="lightbox-img" alt="Enlarged gallery image">
         <div id="lightbox-caption" class="lightbox-caption"></div>
     </div>
