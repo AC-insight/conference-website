@@ -1,4 +1,4 @@
-/* style.css - AgeTech (Bio-Medical) Theme */
+/* style.css - Final Navigation Restore Version */
 
 /* ========================================= */
 /* 1. BASE & RESET */
@@ -11,41 +11,22 @@
 
 :root {
     /* [色彩升級：高齡科技感 (AgeTech Theme)] */
-    
-    /* 主色：深青綠 (Deep Teal) 
-       象徵：醫療、專業、穩重、生命力。比純藍更有溫度，比純綠更科技。 */
     --primary-color: #1a535c;
-    
-    /* 輔助亮色：醫療綠 (Medical Teal) 
-       象徵：清潔、數位化、創新。用於漸層混合。 */
     --primary-light: #4ecdc4;
-    
-    /* 次要色/強調色：暖珊瑚 (Warm Coral) 
-       象徵：人本、關懷、活力。
-       取代了原本刺眼的黃色，這對高齡者來說對比度更好，且更具親和力。 */
     --secondary-color: #ff6b6b;
-    
-    /* 科技點綴：天空藍 (用於漸層) */
     --accent-cyan: #45b7d1;
-    
-    /* 背景：護眼霧白 
-       避免使用 #ffffff 純白，減少長輩閱讀時的眩光。 */
     --bg-color: #f7f9f9;
-    
-    --text-color: #2d3436; /* 深灰而非純黑，閱讀更舒適 */
+    --text-color: #2d3436;
     --white: #ffffff;
     --gray-light: #dfe6e9;
     
-    /* [字體] */
     --font-heading: 'Montserrat', sans-serif;
     --font-body: 'Roboto', sans-serif;
     
-    /* [陰影系統] 讓陰影帶一點青綠色調，而非純黑，增加通透感 */
     --shadow-sm: 0 4px 20px rgba(26, 83, 92, 0.08);
     --shadow-md: 0 10px 40px -10px rgba(26, 83, 92, 0.15);
     --shadow-lg: 0 20px 50px -10px rgba(26, 83, 92, 0.25);
     
-    /* [漸層] Bio-Tech 漸層：從深青綠流向科技藍 */
     --gradient-brand: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-cyan) 100%);
     
     --nav-height: 80px;
@@ -60,10 +41,9 @@ body {
     font-family: var(--font-body);
     line-height: 1.7;
     color: var(--text-color);
-    /* [背景美化] 更柔和的有機光暈 */
     background: 
-        radial-gradient(circle at 10% 20%, rgba(78, 205, 196, 0.06) 0%, transparent 20%), /* Medical Teal 光暈 */
-        radial-gradient(circle at 90% 80%, rgba(255, 107, 107, 0.05) 0%, transparent 20%), /* Coral 光暈 */
+        radial-gradient(circle at 10% 20%, rgba(78, 205, 196, 0.06) 0%, transparent 20%),
+        radial-gradient(circle at 90% 80%, rgba(255, 107, 107, 0.05) 0%, transparent 20%),
         var(--bg-color);
 }
 
@@ -83,7 +63,6 @@ h2 { font-weight: 700; margin-bottom: 1.5rem; }
 /* ========================================= */
 /* 2. HEADER & NAVIGATION */
 /* ========================================= */
-/* 修正：對應 HTML 的 <header> 標籤 */
 header { 
     background-color: var(--primary-color); 
     color: var(--white); 
@@ -102,15 +81,15 @@ header .subtitle {
     color: rgba(255,255,255,0.9);
 }
 
-/* 修正：對應 HTML 的 <nav> 標籤 */
+/* Nav 樣式恢復與優化 */
 nav { 
-    background-color: rgba(255, 255, 255, 0.9); /* 稍微提高不透明度，增加閱讀性 */
+    background-color: rgba(255, 255, 255, 0.9); 
     backdrop-filter: blur(12px);
     box-shadow: var(--shadow-sm); 
     position: sticky; 
     top: 0; 
     z-index: 100; 
-    border-bottom: 1px solid rgba(26, 83, 92, 0.1); /* 微弱的青色邊框 */
+    border-bottom: 1px solid rgba(26, 83, 92, 0.1);
 }
 
 .nav-container {
@@ -118,17 +97,12 @@ nav {
     justify-content: center;
     align-items: center;
     min-height: var(--nav-height);
-}
-
-.nav-list {
-    display: flex;
     flex-wrap: wrap;
-    justify-content: center;
     gap: 1rem;
-    list-style: none;
 }
 
-.nav-list a {
+/* 直接針對 nav 裡的 a 標籤設定樣式 */
+nav a {
     color: var(--primary-color);
     font-weight: 600; 
     padding: 0.6rem 1.2rem;
@@ -137,23 +111,20 @@ nav {
     letter-spacing: 0.5px;
     border-radius: 50px;
     position: relative;
+    transition: all 0.3s ease;
 }
 
-/* Nav 膠囊懸停效果 */
-.nav-list a:hover {
-    background-color: rgba(26, 83, 92, 0.08); /* 深青色微背景 */
+nav a:hover {
+    background-color: rgba(26, 83, 92, 0.08); 
     color: var(--secondary-color);
 }
-.nav-list a::after { display: none; }
 
 /* ========================================= */
 /* 3. SECTIONS & LAYOUT */
 /* ========================================= */
 main { padding-bottom: 4rem; }
 
-/* 修正：對應 HTML 的 .info-section */
-/* 這裡將原本普通的區塊變身為「懸浮卡片」 */
-.info-section {
+.info-section, .section-block {
     background: var(--white);
     padding: 3rem;
     border-radius: 20px;
@@ -165,21 +136,20 @@ main { padding-bottom: 4rem; }
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.info-section:hover { 
+.info-section:hover, .section-block:hover { 
     transform: translateY(-8px); 
     box-shadow: var(--shadow-lg); 
 }
 
-/* 卡片左側裝飾條 */
-.info-section::before {
+.info-section::before, .section-block::before {
     content: '';
     position: absolute; top: 0; left: 0; width: 4px; height: 100%;
     background: var(--gradient-brand);
     opacity: 0; transition: opacity 0.3s;
 }
-.info-section:hover::before { opacity: 1; }
+.info-section:hover::before, .section-block:hover::before { opacity: 1; }
 
-.info-section h2 { 
+.info-section h2, .section-block h2 { 
     color: var(--primary-color); 
     margin-bottom: 1.5rem; 
     text-align: center;
@@ -194,7 +164,7 @@ main { padding-bottom: 4rem; }
     font-weight: 700; 
     text-align: center;
     cursor: pointer;
-    box-shadow: 0 10px 20px -5px rgba(26, 83, 92, 0.3); /* 青色陰影 */
+    box-shadow: 0 10px 20px -5px rgba(26, 83, 92, 0.3);
     transition: all 0.3s ease;
 }
 .btn-primary, .cta-button {
@@ -229,21 +199,19 @@ main { padding-bottom: 4rem; }
 /* 4. SPECIFIC SECTIONS */
 /* ========================================= */
 
-/* Hero Section (修正：對應 .hero-section) */
-.hero-section {
-    /* [Hero 背景] 深青綠漸層，更沈穩 */
+/* Hero Section */
+.hero-section, .section-hero {
     background: radial-gradient(circle at top right, #4ecdc4, #1a535c);
     color: var(--white);
     padding: 0;
     overflow: hidden;
     position: relative;
-    border-radius: 0 0 40px 40px; /* 底部大圓角 */
+    border-radius: 0 0 40px 40px;
     margin-bottom: 4rem;
     box-shadow: var(--shadow-md);
 }
 
-/* 背景裝飾大圓圈 */
-.hero-section::before {
+.hero-section::before, .section-hero::before {
     content: ''; position: absolute; top: -150px; right: -100px;
     width: 600px; height: 600px;
     background: rgba(255,255,255,0.05);
@@ -256,21 +224,18 @@ main { padding-bottom: 4rem; }
     position: relative;
     z-index: 1;
 }
-.hero-layout { min-height: 550px; } /* 確保高度 */
+.hero-layout { min-height: 550px; }
 .hero-content { padding: 4rem 2rem; width: 100%; }
 
 .hero-text { flex: 1; padding-right: 2rem; z-index: 2; }
 
-/* 修正：對應 HTML .hero-image-container */
-.hero-image-container { 
+.hero-image-container, .hero-media { 
     flex: 1; height: 100%; position: relative; 
     display: flex; justify-content: center; align-items: center;
 }
 
-/* 修正：對應 HTML .hero-image */
-.hero-image { 
+.hero-image, .hero-img { 
     width: 100%; max-width: 500px; height: auto; object-fit: cover; 
-    /* Blob 形狀 */
     border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
     box-shadow: 0 20px 40px rgba(0,0,0,0.3);
     animation: morph 8s ease-in-out infinite;
@@ -283,8 +248,7 @@ main { padding-bottom: 4rem; }
     100% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
 }
 
-.tag { 
-    /* Tag 改用珊瑚紅漸層，更顯眼但不刺眼 */
+.tag, .hero-tag { 
     background: linear-gradient(90deg, var(--secondary-color), #ff9f43);
     color: #fff;
     padding: 0.4rem 1.2rem; border-radius: 50px; 
@@ -294,18 +258,17 @@ main { padding-bottom: 4rem; }
     box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
 }
 
-.hero-text h2 { 
+.hero-text h2, .hero-content h2 { 
     color: var(--white); 
     font-size: 3rem; 
     line-height: 1.1; 
     margin-bottom: 1.5rem; 
-    /* 文字漸層：白到淺青 */
     background: linear-gradient(to right, #ffffff, #c7ecee);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent; 
 }
-.hero-text p { opacity: 0.95; margin-bottom: 2.5rem; font-size: 1.15rem; color: var(--white); font-weight: 400; }
+.hero-text p, .hero-content p { opacity: 0.95; margin-bottom: 2.5rem; font-size: 1.15rem; color: var(--white); font-weight: 400; }
 
 /* Mission & Vision */
 .mission-vision-container, .grid-2-col { 
@@ -324,17 +287,17 @@ main { padding-bottom: 4rem; }
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); 
     gap: 2rem; 
 }
-.research-card { 
+.research-card, .card { 
     background: #fafafa; 
     padding: 1.5rem; 
     border-radius: 12px; 
     transition: background 0.3s;
-    border-top: 4px solid var(--primary-light); /* 改為頂部線條，更現代 */
+    border-top: 4px solid var(--primary-light);
 }
-.research-card:hover { background: #fff; box-shadow: var(--shadow-sm); }
-.research-card h3 { margin-bottom: 0.8rem; font-size: 1.3rem; color: var(--primary-color); }
+.research-card:hover, .card:hover { background: #fff; box-shadow: var(--shadow-sm); }
+.research-card h3, .card h3 { margin-bottom: 0.8rem; font-size: 1.3rem; color: var(--primary-color); }
 
-/* Timeline (修正對應) */
+/* Timeline */
 .timeline {
     position: relative; padding-left: 2rem; 
     border-left: 2px solid rgba(26, 83, 92, 0.15);
@@ -362,7 +325,7 @@ main { padding-bottom: 4rem; }
 .timeline-content h3 { margin-bottom: 0.3rem; font-size: 1.3rem; color: var(--primary-color); }
 
 /* Gallery */
-.gallery-alt-bg { background-color: var(--bg-color); } /* 淺灰背景 */
+.gallery-alt-bg { background-color: var(--bg-color); }
 .section-header { text-align: center; margin-bottom: 3rem; }
 .section-subtitle, .section-meta { 
     display: block; color: #7f8c8d; font-weight: 600; 
@@ -384,7 +347,7 @@ main { padding-bottom: 4rem; }
 .gallery-item:hover img { transform: scale(1.1); }
 .gallery-item::after {
     content: attr(data-caption); position: absolute; bottom: 0; left: 0; width: 100%;
-    background: linear-gradient(to top, rgba(26, 83, 92, 0.9), transparent); /* 深青色遮罩 */
+    background: linear-gradient(to top, rgba(26, 83, 92, 0.9), transparent);
     color: white; padding: 2rem 1.5rem 1rem;
     transform: translateY(100%); transition: transform 0.3s;
     font-size: 0.95rem; font-weight: 600;
@@ -392,20 +355,21 @@ main { padding-bottom: 4rem; }
 .gallery-item:hover::after { transform: translateY(0); }
 
 /* Publications */
-.publication-item { text-align: center; max-width: 800px; margin: 0 auto; }
+.publication-card { text-align: center; max-width: 800px; margin: 0 auto; }
 .badge, .pub-badge { 
     background: #dff9fb; color: var(--primary-color); 
     font-size: 0.75rem; padding: 0.3rem 0.8rem; border-radius: 4px; 
     font-weight: 700; display: inline-block; margin-bottom: 1rem;
 }
-.authors { font-style: italic; margin-bottom: 2rem; color: #636e72; }
+.authors { font-style: italic; margin-bottom: 0.5rem; color: #636e72; }
+.journal-info { margin-bottom: 1.5rem; font-weight: 500; color: var(--primary-color); }
 
 /* Join CTA */
 .section-cta { background: radial-gradient(circle, #ffffff 0%, #f7f9f9 100%); text-align: center;}
 
 /* Footer */
 footer { 
-    background-color: var(--primary-color); /* 深青底 */
+    background-color: var(--primary-color); 
     color: var(--white); 
     padding: 5rem 0 3rem; 
     text-align: center; 
@@ -426,18 +390,25 @@ footer {
 /* ========================================= */
 @media (max-width: 768px) {
     /* Nav */
-    .nav-container { padding: 1rem 0; min-height: auto; }
-    .nav-list { flex-direction: column; gap: 0.5rem; padding: 0; width: 100%; }
-    .nav-list a { width: 90%; text-align: center; margin: 0 auto; background: rgba(26, 83, 92, 0.05); }
+    .nav-container { 
+        padding: 1rem 0; 
+        min-height: auto; 
+        flex-direction: column;
+    }
+    nav a { 
+        width: 90%; 
+        text-align: center; 
+        margin: 0 auto; 
+        background: rgba(26, 83, 92, 0.05); 
+    }
 
     /* Hero */
     .hero-layout, .hero-content { flex-direction: column-reverse; display: flex; }
     .hero-content { padding: 3rem 1.5rem; text-align: center; } 
     .hero-text { padding: 0; text-align: center; }
-    .hero-text h2 { font-size: 2rem; }
+    .hero-text h2, .hero-content h2 { font-size: 2rem; }
     
-    /* 修正：在手機上取消 Blob 效果，改回圓角矩形，以免圖片被切掉太多 */
-    .hero-image { 
+    .hero-image, .hero-img { 
         width: 100%; max-width: 400px; max-height: 300px; 
         border-radius: 20px; 
         animation: none; 
