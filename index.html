@@ -9,7 +9,6 @@
     <meta name="description" content="Official website of the AC-INSIGHT Consortium, a research alliance focused on healthy aging and the digitalization of health promotion in Asia.">
     <meta property="og:title" content="AC-INSIGHT Consortium">
     <meta property="og:description" content="Aging Well, Together: The Research Alliance Shaping Asia's Future">
-    <!-- 修正：使用絕對路徑以確保分享時能顯示圖片 -->
     <meta property="og:image" content="https://ted971345.github.io/AC-insight/images/conference-photo.png">
     <meta property="og:url" content="https://ted971345.github.io/AC-insight/">
     <meta property="og:type" content="website">
@@ -34,16 +33,15 @@
         </div>
     </header>
 
+    <!-- 導覽列：恢復為原本簡單的連結結構 (移除 ul/li) 以修復排版 -->
     <nav class="site-nav">
         <div class="container nav-container">
-            <ul class="nav-list" role="menubar" aria-label="Main navigation">
-                <li role="none"><a href="#about" role="menuitem">About Us</a></li>
-                <li role="none"><a href="#research" role="menuitem">Research</a></li>
-                <li role="none"><a href="#history" role="menuitem">History</a></li>
-                <li role="none"><a href="#gallery" role="menuitem">Gallery</a></li>
-                <li role="none"><a href="#publications" role="menuitem">Publications</a></li>
-                <li role="none"><a href="#join" role="menuitem">Join Us</a></li>
-            </ul>
+            <a href="#about">About Us</a>
+            <a href="#research">Research</a>
+            <a href="#history">History</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#publications">Publications</a>
+            <a href="#join">Join Us</a>
         </div>
     </nav>
 
@@ -188,9 +186,6 @@
             </section>
         </div>
 
-        <!-- ========================================= -->
-        <!-- UPDATED: PUBLICATIONS SECTION             -->
-        <!-- ========================================= -->
         <section id="publications" class="section-block section-publications" aria-labelledby="publications-heading">
              <div class="container">
                  <h2 id="publications-heading" class="section-title">Featured Publications</h2>
@@ -252,14 +247,12 @@
         </div>
     </footer>
 
-    <!-- Lightbox Structure -->
     <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="lightbox-caption">
         <button class="close-button" aria-label="Close lightbox">&times;</button>
         <img class="lightbox-content" id="lightbox-img" alt="Enlarged gallery image">
         <div id="lightbox-caption" class="lightbox-caption"></div>
     </div>
 
-    <!-- Lightbox Script -->
     <script>
         const lightbox = document.getElementById('lightbox');
         const lightboxImg = document.getElementById('lightbox-img');
