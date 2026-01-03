@@ -9,6 +9,7 @@
     <meta name="description" content="Official website of the AC-INSIGHT Consortium, a research alliance focused on healthy aging and the digitalization of health promotion in Asia.">
     <meta property="og:title" content="AC-INSIGHT Consortium">
     <meta property="og:description" content="Aging Well, Together: The Research Alliance Shaping Asia's Future">
+    <!-- 修正：改回 .png -->
     <meta property="og:image" content="https://ted971345.github.io/AC-insight/images/conference-photo.png">
     <meta property="og:url" content="https://ted971345.github.io/AC-insight/">
     <meta property="og:type" content="website">
@@ -26,18 +27,26 @@
 </head>
 <body>
 
+    <!-- Header 改版：加入圖片 -->
     <header class="site-header">
         <div class="container header-container">
-            <h1><a href="#">AC-INSIGHT Consortium</a></h1>
-            <p class="subtitle">"Aging Well, Together: The Research Alliance Shaping Asia's Future"</p>
+            <!-- LOGO 圖片 -->
+            <div class="header-logo">
+                <img src="images/conference-photo.png" alt="AC-INSIGHT Logo">
+            </div>
+            <!-- 標題文字 -->
+            <div class="header-text">
+                <h1><a href="#">AC-INSIGHT Consortium</a></h1>
+                <p class="subtitle">"Aging Well, Together: The Research Alliance Shaping Asia's Future"</p>
+            </div>
         </div>
     </header>
 
-    <!-- 導覽列：已恢復為最原始的 <a> 結構，解決排版跑版問題 -->
+    <!-- 導覽列 -->
     <nav class="site-nav">
         <div class="container nav-container">
             <a href="#about">About Us</a>
-            <a href="#founder">Founder</a> <!-- 新增創辦人連結 -->
+            <a href="#founder">Founder</a>
             <a href="#research">Research</a>
             <a href="#history">History</a>
             <a href="#gallery">Gallery</a>
@@ -47,16 +56,14 @@
     </nav>
 
     <main role="main">
+        <!-- Hero Section：改為純文字置中，更顯大氣 -->
         <section class="section-hero" aria-labelledby="hero-heading">
-            <div class="container hero-layout">
-                <div class="hero-content">
+            <div class="container hero-layout-centered">
+                <div class="hero-content-centered">
                     <span class="hero-tag">Next: Taipei 2026</span>
                     <h2 id="hero-heading">Asian Consortium for Innovative Nexus for Sustainable Health Integration and Geriatric Healthcare Transformation</h2>
                     <p>Pioneering scientists from Japan, Korea, Taiwan, and China united to revolutionize healthy aging across borders, disciplines, and technologies.</p>
                     <a href="#join" class="btn btn-primary">Join the Movement</a>
-                </div>
-                <div class="hero-media">
-                    <img src="images/conference-photo.png" alt="A group photo of AC-INSIGHT consortium members." class="hero-img">
                 </div>
             </div>
         </section>
@@ -77,7 +84,7 @@
             </div>
         </section>
 
-        <!-- 新增：創辦人介紹區塊 -->
+        <!-- 創辦人區塊 -->
         <section id="founder" class="section-block section-founder" aria-labelledby="founder-heading">
             <div class="container">
                 <h2 id="founder-heading" class="section-title">Founding Chair</h2>
@@ -206,7 +213,7 @@
              <div class="container">
                  <h2 id="publications-heading" class="section-title">Featured Publications</h2>
                  
-                 <!-- Article 1: Narrative Review -->
+                 <!-- Article 1 -->
                  <div class="card publication-card" style="margin-bottom: 2rem;">
                      <span class="badge">Narrative Review</span>
                      <h3>The Impact of Open-Skill Exercises and E-sports on Cognitive Function: A Narrative Review of Their Role in Preventing Cognitive Decline and Dementia</h3>
@@ -215,7 +222,7 @@
                      <a href="https://doi.org/10.3390/brainsci15070682" class="btn btn-outline" target="_blank">Read Full Paper</a>
                  </div>
 
-                 <!-- Article 2: Ann Geriatr Med Res (Busan Study) -->
+                 <!-- Article 2 -->
                  <div class="card publication-card" style="margin-bottom: 2rem;">
                      <span class="badge">Original Research</span>
                      <h3>Bidirectional Relationship among Cognitive Function, Muscle Mass, and Grip Strength in Older Adults: the BUSAN Study</h3>
@@ -224,7 +231,7 @@
                      <a href="https://doi.org/10.4235/agmr.24.0157" class="btn btn-outline" target="_blank">Read Full Paper</a>
                  </div>
 
-                 <!-- Article 3: Geriatric Nursing -->
+                 <!-- Article 3 -->
                  <div class="card publication-card" style="margin-bottom: 2rem;">
                      <span class="badge">Featured Article</span>
                      <h3>Association of 24-Hour movement behavior and cognitive function in older Taiwanese adults</h3>
@@ -233,7 +240,7 @@
                      <a href="https://doi.org/10.1016/j.gerinurse.2024.06.028" class="btn btn-outline" target="_blank">Read Full Paper</a>
                  </div>
 
-                 <!-- Article 4: Front. Aging Neurosci -->
+                 <!-- Article 4 -->
                  <div class="card publication-card">
                      <span class="badge">Original Research</span>
                      <h3>Cross-sectional and longitudinal association between accelerometer-measured light-intensity physical activity and cognitive function in older adults</h3>
@@ -263,6 +270,7 @@
         </div>
     </footer>
 
+    <!-- Lightbox 部分保持不變 -->
     <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="lightbox-caption">
         <button class="close-button" aria-label="Close lightbox">&times;</button>
         <img class="lightbox-content" id="lightbox-img" alt="Enlarged gallery image">
