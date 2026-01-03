@@ -1,4 +1,4 @@
-/* style.css - Corrected Organic Tech Version (Matched to Index) */
+/* style.css - AgeTech (Bio-Medical) Theme */
 
 /* ========================================= */
 /* 1. BASE & RESET */
@@ -10,27 +10,42 @@
 }
 
 :root {
-    /* [色彩升級] */
-    --primary-color: #003a63;       /* 專業深藍 */
-    --primary-light: #005f9e;       /* 亮藍 */
-    --secondary-color: #fca311;     /* 活力橙 */
-    --accent-cyan: #00d2ff;         /* 科技青 */
+    /* [色彩升級：高齡科技感 (AgeTech Theme)] */
     
-    --bg-color: #f4f7f9;            /* 冷灰白背景 */
-    --text-color: #2c3e50;
+    /* 主色：深青綠 (Deep Teal) 
+       象徵：醫療、專業、穩重、生命力。比純藍更有溫度，比純綠更科技。 */
+    --primary-color: #1a535c;
+    
+    /* 輔助亮色：醫療綠 (Medical Teal) 
+       象徵：清潔、數位化、創新。用於漸層混合。 */
+    --primary-light: #4ecdc4;
+    
+    /* 次要色/強調色：暖珊瑚 (Warm Coral) 
+       象徵：人本、關懷、活力。
+       取代了原本刺眼的黃色，這對高齡者來說對比度更好，且更具親和力。 */
+    --secondary-color: #ff6b6b;
+    
+    /* 科技點綴：天空藍 (用於漸層) */
+    --accent-cyan: #45b7d1;
+    
+    /* 背景：護眼霧白 
+       避免使用 #ffffff 純白，減少長輩閱讀時的眩光。 */
+    --bg-color: #f7f9f9;
+    
+    --text-color: #2d3436; /* 深灰而非純黑，閱讀更舒適 */
     --white: #ffffff;
-    --gray-light: #e9ecef;
+    --gray-light: #dfe6e9;
     
     /* [字體] */
     --font-heading: 'Montserrat', sans-serif;
     --font-body: 'Roboto', sans-serif;
     
-    /* [陰影系統] */
-    --shadow-sm: 0 4px 20px rgba(0, 58, 99, 0.05);
-    --shadow-md: 0 10px 40px -10px rgba(0, 58, 99, 0.15);
-    --shadow-lg: 0 20px 50px -10px rgba(0, 58, 99, 0.25);
+    /* [陰影系統] 讓陰影帶一點青綠色調，而非純黑，增加通透感 */
+    --shadow-sm: 0 4px 20px rgba(26, 83, 92, 0.08);
+    --shadow-md: 0 10px 40px -10px rgba(26, 83, 92, 0.15);
+    --shadow-lg: 0 20px 50px -10px rgba(26, 83, 92, 0.25);
     
-    /* [漸層] */
+    /* [漸層] Bio-Tech 漸層：從深青綠流向科技藍 */
     --gradient-brand: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-cyan) 100%);
     
     --nav-height: 80px;
@@ -45,10 +60,10 @@ body {
     font-family: var(--font-body);
     line-height: 1.7;
     color: var(--text-color);
-    /* [背景美化] 有機光暈 */
+    /* [背景美化] 更柔和的有機光暈 */
     background: 
-        radial-gradient(circle at 10% 20%, rgba(0, 210, 255, 0.04) 0%, transparent 20%),
-        radial-gradient(circle at 90% 80%, rgba(252, 163, 17, 0.04) 0%, transparent 20%),
+        radial-gradient(circle at 10% 20%, rgba(78, 205, 196, 0.06) 0%, transparent 20%), /* Medical Teal 光暈 */
+        radial-gradient(circle at 90% 80%, rgba(255, 107, 107, 0.05) 0%, transparent 20%), /* Coral 光暈 */
         var(--bg-color);
 }
 
@@ -89,13 +104,13 @@ header .subtitle {
 
 /* 修正：對應 HTML 的 <nav> 標籤 */
 nav { 
-    background-color: rgba(255, 255, 255, 0.85); /* 毛玻璃 */
+    background-color: rgba(255, 255, 255, 0.9); /* 稍微提高不透明度，增加閱讀性 */
     backdrop-filter: blur(12px);
     box-shadow: var(--shadow-sm); 
     position: sticky; 
     top: 0; 
     z-index: 100; 
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    border-bottom: 1px solid rgba(26, 83, 92, 0.1); /* 微弱的青色邊框 */
 }
 
 .nav-container {
@@ -126,7 +141,7 @@ nav {
 
 /* Nav 膠囊懸停效果 */
 .nav-list a:hover {
-    background-color: rgba(0, 58, 99, 0.05);
+    background-color: rgba(26, 83, 92, 0.08); /* 深青色微背景 */
     color: var(--secondary-color);
 }
 .nav-list a::after { display: none; }
@@ -179,7 +194,7 @@ main { padding-bottom: 4rem; }
     font-weight: 700; 
     text-align: center;
     cursor: pointer;
-    box-shadow: 0 10px 20px -5px rgba(0, 210, 255, 0.3);
+    box-shadow: 0 10px 20px -5px rgba(26, 83, 92, 0.3); /* 青色陰影 */
     transition: all 0.3s ease;
 }
 .btn-primary, .cta-button {
@@ -190,7 +205,7 @@ main { padding-bottom: 4rem; }
 }
 .btn-primary:hover, .cta-button:hover { 
     transform: translateY(-3px); 
-    box-shadow: 0 15px 30px -5px rgba(0, 210, 255, 0.5); 
+    box-shadow: 0 15px 30px -5px rgba(26, 83, 92, 0.5); 
     filter: brightness(1.1);
 }
 .btn-outline, .secondary-button {
@@ -216,7 +231,8 @@ main { padding-bottom: 4rem; }
 
 /* Hero Section (修正：對應 .hero-section) */
 .hero-section {
-    background: radial-gradient(circle at top right, #005f9e, #003a63);
+    /* [Hero 背景] 深青綠漸層，更沈穩 */
+    background: radial-gradient(circle at top right, #4ecdc4, #1a535c);
     color: var(--white);
     padding: 0;
     overflow: hidden;
@@ -230,7 +246,7 @@ main { padding-bottom: 4rem; }
 .hero-section::before {
     content: ''; position: absolute; top: -150px; right: -100px;
     width: 600px; height: 600px;
-    background: rgba(255,255,255,0.03);
+    background: rgba(255,255,255,0.05);
     border-radius: 50%; z-index: 0;
 }
 
@@ -258,7 +274,7 @@ main { padding-bottom: 4rem; }
     border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
     box-shadow: 0 20px 40px rgba(0,0,0,0.3);
     animation: morph 8s ease-in-out infinite;
-    border: 6px solid rgba(255,255,255,0.1);
+    border: 6px solid rgba(255,255,255,0.15);
 }
 
 @keyframes morph {
@@ -268,13 +284,14 @@ main { padding-bottom: 4rem; }
 }
 
 .tag { 
-    background: linear-gradient(90deg, var(--secondary-color), #ffbd00);
+    /* Tag 改用珊瑚紅漸層，更顯眼但不刺眼 */
+    background: linear-gradient(90deg, var(--secondary-color), #ff9f43);
     color: #fff;
     padding: 0.4rem 1.2rem; border-radius: 50px; 
     font-size: 0.8rem; font-weight: 700; 
     text-transform: uppercase; letter-spacing: 1px;
     display: inline-block; margin-bottom: 1.5rem;
-    box-shadow: 0 4px 15px rgba(252, 163, 17, 0.4);
+    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
 }
 
 .hero-text h2 { 
@@ -282,12 +299,13 @@ main { padding-bottom: 4rem; }
     font-size: 3rem; 
     line-height: 1.1; 
     margin-bottom: 1.5rem; 
-    background: linear-gradient(to right, #ffffff, #89d7ff);
+    /* 文字漸層：白到淺青 */
+    background: linear-gradient(to right, #ffffff, #c7ecee);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent; 
 }
-.hero-text p { opacity: 0.9; margin-bottom: 2.5rem; font-size: 1.15rem; color: var(--white); }
+.hero-text p { opacity: 0.95; margin-bottom: 2.5rem; font-size: 1.15rem; color: var(--white); font-weight: 400; }
 
 /* Mission & Vision */
 .mission-vision-container, .grid-2-col { 
@@ -311,6 +329,7 @@ main { padding-bottom: 4rem; }
     padding: 1.5rem; 
     border-radius: 12px; 
     transition: background 0.3s;
+    border-top: 4px solid var(--primary-light); /* 改為頂部線條，更現代 */
 }
 .research-card:hover { background: #fff; box-shadow: var(--shadow-sm); }
 .research-card h3 { margin-bottom: 0.8rem; font-size: 1.3rem; color: var(--primary-color); }
@@ -318,7 +337,7 @@ main { padding-bottom: 4rem; }
 /* Timeline (修正對應) */
 .timeline {
     position: relative; padding-left: 2rem; 
-    border-left: 2px solid rgba(0, 58, 99, 0.1);
+    border-left: 2px solid rgba(26, 83, 92, 0.15);
     max-width: 800px; margin: 0 auto;
 }
 .timeline-item { margin-bottom: 3rem; position: relative; padding-left: 2rem; }
@@ -328,7 +347,7 @@ main { padding-bottom: 4rem; }
     background: var(--white);
     border: 4px solid var(--primary-color); 
     border-radius: 50%; z-index: 1;
-    box-shadow: 0 0 0 4px rgba(0, 58, 99, 0.05);
+    box-shadow: 0 0 0 4px rgba(26, 83, 92, 0.1);
     transition: transform 0.3s;
 }
 .timeline-item:hover .timeline-marker {
@@ -340,17 +359,17 @@ main { padding-bottom: 4rem; }
     display: block; font-weight: 800; color: var(--secondary-color); 
     font-size: 1rem; margin-bottom: 0.5rem; letter-spacing: 1px;
 }
-.timeline-content h3 { margin-bottom: 0.3rem; font-size: 1.3rem; color: var(--primary-dark); }
+.timeline-content h3 { margin-bottom: 0.3rem; font-size: 1.3rem; color: var(--primary-color); }
 
 /* Gallery */
 .gallery-alt-bg { background-color: var(--bg-color); } /* 淺灰背景 */
 .section-header { text-align: center; margin-bottom: 3rem; }
 .section-subtitle, .section-meta { 
-    display: block; color: #777; font-weight: 600; 
+    display: block; color: #7f8c8d; font-weight: 600; 
     margin-top: 0.5rem; letter-spacing: 1px; 
     text-transform: uppercase; font-size: 0.9rem; 
 }
-.section-intro { text-align: center; max-width: 700px; margin: 0 auto 3rem; color: #555; font-size: 1.1rem; }
+.section-intro { text-align: center; max-width: 700px; margin: 0 auto 3rem; color: #636e72; font-size: 1.1rem; }
 
 .gallery-container, .gallery-grid { 
     display: grid; 
@@ -365,7 +384,7 @@ main { padding-bottom: 4rem; }
 .gallery-item:hover img { transform: scale(1.1); }
 .gallery-item::after {
     content: attr(data-caption); position: absolute; bottom: 0; left: 0; width: 100%;
-    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    background: linear-gradient(to top, rgba(26, 83, 92, 0.9), transparent); /* 深青色遮罩 */
     color: white; padding: 2rem 1.5rem 1rem;
     transform: translateY(100%); transition: transform 0.3s;
     font-size: 0.95rem; font-weight: 600;
@@ -375,27 +394,27 @@ main { padding-bottom: 4rem; }
 /* Publications */
 .publication-item { text-align: center; max-width: 800px; margin: 0 auto; }
 .badge, .pub-badge { 
-    background: #eef2f7; color: var(--primary-color); 
+    background: #dff9fb; color: var(--primary-color); 
     font-size: 0.75rem; padding: 0.3rem 0.8rem; border-radius: 4px; 
     font-weight: 700; display: inline-block; margin-bottom: 1rem;
 }
-.authors { font-style: italic; margin-bottom: 2rem; color: #555; }
+.authors { font-style: italic; margin-bottom: 2rem; color: #636e72; }
 
 /* Join CTA */
-.section-cta { background: radial-gradient(circle, #ffffff 0%, #f0f4f8 100%); text-align: center;}
+.section-cta { background: radial-gradient(circle, #ffffff 0%, #f7f9f9 100%); text-align: center;}
 
 /* Footer */
 footer { 
-    background-color: var(--primary-dark); 
+    background-color: var(--primary-color); /* 深青底 */
     color: var(--white); 
     padding: 5rem 0 3rem; 
     text-align: center; 
 }
 .footer-brand { font-size: 1.8rem; font-weight: 700; margin-bottom: 1.5rem; letter-spacing: -1px; }
-.copyright { margin-top: 3rem; opacity: 0.5; font-size: 0.8rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1.5rem; }
+.copyright { margin-top: 3rem; opacity: 0.6; font-size: 0.8rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1.5rem; }
 
 /* Lightbox */
-.lightbox { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.95); backdrop-filter: blur(5px); }
+.lightbox { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(26, 83, 92, 0.95); backdrop-filter: blur(5px); }
 .lightbox.is-visible { display: flex; align-items: center; justify-content: center; }
 .lightbox-content { max-width: 90%; max-height: 85%; object-fit: contain; border-radius: 4px; box-shadow: 0 20px 60px rgba(0,0,0,0.5); }
 .lightbox-caption { position: absolute; bottom: 30px; color: var(--white); text-align: center; width: 100%; font-size: 1.1rem; text-shadow: 0 2px 4px rgba(0,0,0,0.8); }
@@ -409,7 +428,7 @@ footer {
     /* Nav */
     .nav-container { padding: 1rem 0; min-height: auto; }
     .nav-list { flex-direction: column; gap: 0.5rem; padding: 0; width: 100%; }
-    .nav-list a { width: 90%; text-align: center; margin: 0 auto; background: rgba(0,0,0,0.03); }
+    .nav-list a { width: 90%; text-align: center; margin: 0 auto; background: rgba(26, 83, 92, 0.05); }
 
     /* Hero */
     .hero-layout, .hero-content { flex-direction: column-reverse; display: flex; }
@@ -431,7 +450,7 @@ footer {
     
     /* Timeline */
     .timeline { padding-left: 1rem; border-left: none; } 
-    .timeline-item { padding-left: 1.5rem; margin-left: 0.5rem; border-left: 2px solid rgba(0, 58, 99, 0.1); }
+    .timeline-item { padding-left: 1.5rem; margin-left: 0.5rem; border-left: 2px solid rgba(26, 83, 92, 0.2); }
     .timeline-marker { left: -0.65rem; width: 16px; height: 16px; top: 0.2rem; }
     
     .grid-2-col, .grid-research { grid-template-columns: 1fr; }

@@ -5,19 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AC-INSIGHT Consortium</title>
     
+    <!-- SEO Meta Tags -->
     <meta name="description" content="Official website of the AC-INSIGHT Consortium, a research alliance focused on healthy aging and the digitalization of health promotion in Asia.">
     <meta property="og:title" content="AC-INSIGHT Consortium">
     <meta property="og:description" content="Aging Well, Together: The Research Alliance Shaping Asia's Future">
-    <meta property="og:image" content="images/conference-photo.png">
+    <!-- 修正：使用絕對路徑以確保分享時能顯示圖片 -->
+    <meta property="og:image" content="https://ted971345.github.io/AC-insight/images/conference-photo.png">
     <meta property="og:url" content="https://ted971345.github.io/AC-insight/">
     <meta property="og:type" content="website">
 
+    <!-- Favicon -->
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     
+    <!-- CSS Link -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -183,15 +188,49 @@
             </section>
         </div>
 
+        <!-- ========================================= -->
+        <!-- UPDATED: PUBLICATIONS SECTION             -->
+        <!-- ========================================= -->
         <section id="publications" class="section-block section-publications" aria-labelledby="publications-heading">
              <div class="container">
-                 <h2 id="publications-heading" class="section-title">Featured Publication</h2>
-                 <div class="card publication-card">
+                 <h2 id="publications-heading" class="section-title">Featured Publications</h2>
+                 
+                 <!-- Article 1: Narrative Review -->
+                 <div class="card publication-card" style="margin-bottom: 2rem;">
                      <span class="badge">Narrative Review</span>
-                     <h3>The Impact of Open-Skill Exercises and E-sports on Cognitive Function...</h3>
+                     <h3>The Impact of Open-Skill Exercises and E-sports on Cognitive Function: A Narrative Review of Their Role in Preventing Cognitive Decline and Dementia</h3>
                      <p class="authors">Shuzo Kumagai<sup>1,2</sup>, et al.</p>
+                     <p class="journal-info">Brain Sciences (2024)</p>
                      <a href="https://doi.org/10.3390/brainsci15070682" class="btn btn-outline" target="_blank">Read Full Paper</a>
                  </div>
+
+                 <!-- Article 2: Ann Geriatr Med Res (Busan Study) -->
+                 <div class="card publication-card" style="margin-bottom: 2rem;">
+                     <span class="badge">Original Research</span>
+                     <h3>Bidirectional Relationship among Cognitive Function, Muscle Mass, and Grip Strength in Older Adults: the BUSAN Study</h3>
+                     <p class="authors">Du-Ri Kim<sup>1</sup>, Jong-Hwan Park<sup>2,3,4</sup>, Ting-Fu Lai<sup>1,5</sup>, et al.</p>
+                     <p class="journal-info">Annals of Geriatric Medicine and Research (2025), 29(2):199–206</p>
+                     <a href="https://doi.org/10.4235/agmr.24.0157" class="btn btn-outline" target="_blank">Read Full Paper</a>
+                 </div>
+
+                 <!-- Article 3: Geriatric Nursing -->
+                 <div class="card publication-card" style="margin-bottom: 2rem;">
+                     <span class="badge">Featured Article</span>
+                     <h3>Association of 24-Hour movement behavior and cognitive function in older Taiwanese adults</h3>
+                     <p class="authors">Ting-Fu Lai<sup>1,2</sup>, Chih-Ching Chang<sup>3</sup>, Ming-Chun Hsueh<sup>4</sup>, et al.</p>
+                     <p class="journal-info">Geriatric Nursing (2024), 59:60-66</p>
+                     <a href="https://doi.org/10.1016/j.gerinurse.2024.06.028" class="btn btn-outline" target="_blank">Read Full Paper</a>
+                 </div>
+
+                 <!-- Article 4: Front. Aging Neurosci -->
+                 <div class="card publication-card">
+                     <span class="badge">Original Research</span>
+                     <h3>Cross-sectional and longitudinal association between accelerometer-measured light-intensity physical activity and cognitive function in older adults</h3>
+                     <p class="authors">Jing-Han Jhan<sup>1</sup>, Jiaren Chen<sup>1</sup>, Ting-Fu Lai<sup>1,2</sup>, Jong-Hwan Park<sup>3,4,5</sup>, Yung Liao<sup>1,6</sup></p>
+                     <p class="journal-info">Frontiers in Aging Neuroscience (2025), Vol 17</p>
+                     <a href="https://doi.org/10.3389/fnagi.2025.1505172" class="btn btn-outline" target="_blank">Read Full Paper</a>
+                 </div>
+
              </div>
         </section>
         
@@ -213,12 +252,14 @@
         </div>
     </footer>
 
+    <!-- Lightbox Structure -->
     <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="lightbox-caption">
         <button class="close-button" aria-label="Close lightbox">&times;</button>
         <img class="lightbox-content" id="lightbox-img" alt="Enlarged gallery image">
         <div id="lightbox-caption" class="lightbox-caption"></div>
     </div>
 
+    <!-- Lightbox Script -->
     <script>
         const lightbox = document.getElementById('lightbox');
         const lightboxImg = document.getElementById('lightbox-img');
