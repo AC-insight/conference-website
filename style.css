@@ -545,10 +545,36 @@ img { max-width: 100%; display: block; }
 }
 
 @media (max-width: 520px) {
-  .nav-container { gap: 0.55rem; padding: 0.8rem 0; }
-  .site-nav a {
-    width: 92%;
-    text-align: center;
-    background: rgba(15,61,68,0.04);
+  /* Mobile nav becomes horizontal scroll */
+  .nav-container {
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+
+    gap: 0.6rem;
+    padding: 0.65rem 0.6rem;
+    min-height: var(--nav-height);
+
+    scroll-snap-type: x mandatory;
   }
+
+  .site-nav a {
+    flex: 0 0 auto;
+    width: auto;              /* 取消你原本的 92% */
+    white-space: nowrap;      /* 防止文字斷行 */
+    text-align: center;
+
+    padding: 0.55rem 0.95rem;
+    background: rgba(15,61,68,0.06);
+    scroll-snap-align: start;
+  }
+
+  /* Optional: hide scrollbar (still scrollable) */
+  .nav-container::-webkit-scrollbar { height: 0; }
+  .nav-container { scrollbar-width: none; }
+
+  /* 如果你有 wordmark */
+  .brand-wordmark { height: 58px; }
 }
