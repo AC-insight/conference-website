@@ -28,16 +28,18 @@
 
   <!-- Header -->
   <header class="site-header">
-    <div class="container header-container">
-      <div class="header-logo">
-        <img src="images/conference-photo.png" alt="AC-INSIGHT Logo">
-      </div>
-      <div class="header-text">
-        <h1><a href="#top">AC-INSIGHT Consortium</a></h1>
-        <p class="subtitle">"Aging Well, Together: The Research Alliance Shaping Asia's Future"</p>
-      </div>
-    </div>
-  </header>
+  <div class="container header-container header-container--brand">
+    <a class="header-brand" href="#top" aria-label="AC-INSIGHT Consortium home">
+      <img class="brand-wordmark" src="images/conference-photo.png" alt="AC-INSIGHT Consortium logo">
+    </a>
+
+    <!-- 保留 H1 給 SEO/可及性，但不重複顯示在畫面上 -->
+    <h1 class="sr-only">AC-INSIGHT Consortium</h1>
+
+    <!-- 你若覺得圖上已經有 tagline，這行可以刪掉 -->
+    <p class="subtitle">Aging Well, Together: The Research Alliance Shaping Asia's Future</p>
+  </div>
+</header>
 
   <!-- Nav -->
   <nav class="site-nav" aria-label="Primary navigation">
